@@ -120,3 +120,7 @@ Recorded timings describe the tested Apple M4 Pro host and pinned container conf
 SpatialAtlas is a dissemination layer, not a replacement for spatial statistics, trajectory inference, deconvolution, or cell-cell communication analysis. Do not expose restricted biological data without confirming consent, licensing, institutional policy, and suitable authentication or network controls.
 
 Software is released under the MIT License. Biological data retain the conditions of their originating studies and repositories. Citation metadata are provided in `CITATION.cff`.
+
+## Citation
+
+The evaluated SpatialAtlas v1.0.0 source release is archived in Zenodo: https://doi.org/10.5281/zenodo.21476516. The five versioned example and benchmark data archives are distributed with GitHub Release v1.0.0 and verified by `release-assets.sha256`.

@@ -2,6 +2,8 @@
 
 SpatialAtlas v1.0.0 provides a reproducible route from processed Visium or Visium HD objects to a self-hosted interactive atlas.
 
+Version-specific DOI: `10.5281/zenodo.21476516` (https://doi.org/10.5281/zenodo.21476516)
+
 ## Included
 
 - Python/Dash application with spatial, UMAP, violin, heatmap, and four-gene views.
