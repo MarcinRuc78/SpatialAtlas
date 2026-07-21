@@ -1,0 +1,28 @@
+atlas:
+  title: "Human lymph node benchmark"
+samples:
+  - name: "Human lymph node"
+    h5ad: "/dataset/output/sample_human_lymph_node.h5ad"
+    image: "/dataset/output/tissue_human_lymph_node.png"
+    scale_factor_x: 0.170111
+    scale_factor_y: 0.170111
+    img_xmin: 0
+    img_xmax: 1921
+    img_ymin: 0
+    img_ymax: 2000
+markers_csv: "/dataset/output/markers.csv"
+display:
+  default_point_size: 4
+  default_opacity: 0.7
+  default_colorscale: "Transparent-Green"
+  spatial_plot_height: 800
+  max_gene_dropdown: 500
+multi_gene:
+  gene_a: "CD74"
+  gene_b: "MS4A1"
+  gene_c: "CD3D"
+  gene_d: "COL1A1"
+server:
+  host: "0.0.0.0"
+  port: 8050
+  debug: false

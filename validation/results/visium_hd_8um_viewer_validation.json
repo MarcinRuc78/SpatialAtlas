@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "config": "/package/validation/technology_benchmark/config_visium_hd_8um.yaml",
+  "import_seconds": 2.168768250994617,
+  "n_obs": 143112,
+  "n_genes": 15109,
+  "n_samples": 1,
+  "expression_cache_gib": 0.2910625487565994,
+  "gene": "Cyp11b2",
+  "checks": {
+    "spatial_cluster": {
+      "status": "PASS",
+      "seconds": 0.09972045800532214,
+      "traces": 8,
+      "json_bytes": 1596950
+    },
+    "spatial_gene": {
+      "status": "PASS",
+      "seconds": 0.022062459000153467,
+      "traces": 1,
+      "json_bytes": 253834
+    },
+    "umap": {
+      "status": "PASS",
+      "seconds": 0.09492854199925205,
+      "traces": 1,
+      "json_bytes": 3272439
+    },
+    "violin": {
+      "status": "PASS",
+      "seconds": 0.22503887499624398,
+      "traces": 8,
+      "json_bytes": 1347547
+    },
+    "multi_gene": {
+      "status": "PASS",
+      "seconds": 0.023820834001526237,
+      "traces": 4,
+      "json_bytes": 784443
+    },
+    "http": {
+      "status": "PASS",
+      "root_status": 200,
+      "image_status": 200,
+      "image_cache_control": "public, max-age=3600"
+    }
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "genes": [
+    "Cyp11b2",
+    "Gpc3",
+    "Npy",
+    "Akr1c18"
+  ],
+  "runs": [
+    {
+      "gene": "Cyp11b2",
+      "iteration": 1,
+      "extraction_s": 0.0004585409988067113,
+      "figure_build_s": 0.014279125000030035,
+      "serialization_s": 0.01757220800027426,
+      "server_total_s": 0.031851333000304294,
+      "response_bytes": 1145157,
+      "memory_after_bytes": 3708940288
+    },
+    {
+      "gene": "Gpc3",
+      "iteration": 1,
+      "extraction_s": 0.00046004199975868687,
+      "figure_build_s": 0.014450375001615612,
+      "serialization_s": 0.006557874999998603,
+      "server_total_s": 0.021008250001614215,
+      "response_bytes": 435127,
+      "memory_after_bytes": 3705872384
+    },
+    {
+      "gene": "Npy",
+      "iteration": 1,
+      "extraction_s": 0.000372125001376844,
+      "figure_build_s": 0.013485374998708721,
+      "serialization_s": 0.008301542000481277,
+      "server_total_s": 0.021786916999189998,
+      "response_bytes": 533639,
+      "memory_after_bytes": 3707445248
+    },
+    {
+      "gene": "Akr1c18",
+      "iteration": 1,
+      "extraction_s": 0.0003954580006393371,
+      "figure_build_s": 0.013700457999220816,
+      "serialization_s": 0.007381416000498575,
+      "server_total_s": 0.02108187399971939,
+      "response_bytes": 498511,
+      "memory_after_bytes": 3707445248
+    },
+    {
+      "gene": "Cyp11b2",
+      "iteration": 2,
+      "extraction_s": 0.00042424999992363155,
+      "figure_build_s": 0.014071749999857275,
+      "serialization_s": 0.017222208000021055,
+      "server_total_s": 0.03129395799987833,
+      "response_bytes": 1145157,
+      "memory_after_bytes": 3709018112
+    },
+    {
+      "gene": "Gpc3",
+      "iteration": 2,
+      "extraction_s": 0.00041258400051447097,
+      "figure_build_s": 0.013402208000115934,
+      "serialization_s": 0.00645812500079046,
+      "server_total_s": 0.019860333000906394,
+      "response_bytes": 435127,
+      "memory_after_bytes": 3706208256
+    },
+    {
+      "gene": "Npy",
+      "iteration": 2,
+      "extraction_s": 0.00038987500010989606,
+      "figure_build_s": 0.013168542000130401,
+      "serialization_s": 0.008111208999252995,
+      "server_total_s": 0.021279750999383396,
+      "response_bytes": 533639,
+      "memory_after_bytes": 3707781120
+    },
+    {
+      "gene": "Akr1c18",
+      "iteration": 2,
+      "extraction_s": 0.0003483340005914215,
+      "figure_build_s": 0.013748375000432134,
+      "serialization_s": 0.007262540999363409,
+      "server_total_s": 0.021010915999795543,
+      "response_bytes": 498511,
+      "memory_after_bytes": 3707781120
+    },
+    {
+      "gene": "Cyp11b2",
+      "iteration": 3,
+      "extraction_s": 0.00040174999958253466,
+      "figure_build_s": 0.01375904199994693,
+      "serialization_s": 0.01743733399962366,
+      "server_total_s": 0.03119637599957059,
+      "response_bytes": 1145157,
+      "memory_after_bytes": 3710140416
+    },
+    {
+      "gene": "Gpc3",
+      "iteration": 3,
+      "extraction_s": 0.00041162500019709114,
+      "figure_build_s": 0.013385500000367756,
+      "serialization_s": 0.00664337499983958,
+      "server_total_s": 0.020028875000207336,
+      "response_bytes": 435127,
+      "memory_after_bytes": 3707072512
+    },
+    {
+      "gene": "Npy",
+      "iteration": 3,
+      "extraction_s": 0.0003717910003615543,
+      "figure_build_s": 0.013166916998670786,
+      "serialization_s": 0.008197250001103384,
+      "server_total_s": 0.02136416699977417,
+      "response_bytes": 533639,
+      "memory_after_bytes": 3708383232
+    },
+    {
+      "gene": "Akr1c18",
+      "iteration": 3,
+      "extraction_s": 0.00034633399991435,
+      "figure_build_s": 0.013327374999789754,
+      "serialization_s": 0.007520540999394143,
+      "server_total_s": 0.020847915999183897,
+      "response_bytes": 498511,
+      "memory_after_bytes": 3708383232
+    },
+    {
+      "gene": "Cyp11b2",
+      "iteration": 4,
+      "extraction_s": 0.00043000000005122274,
+      "figure_build_s": 0.014625540999986697,
+      "serialization_s": 0.017864749999716878,
+      "server_total_s": 0.032490290999703575,
+      "response_bytes": 1145157,
+      "memory_after_bytes": 3711528960
+    },
+    {
+      "gene": "Gpc3",
+      "iteration": 4,
+      "extraction_s": 0.00039449999894713983,
+      "figure_build_s": 0.013485499999660533,
+      "serialization_s": 0.006715583000186598,
+      "server_total_s": 0.02020108299984713,
+      "response_bytes": 435127,
+      "memory_after_bytes": 3708985344
+    },
+    {
+      "gene": "Npy",
+      "iteration": 4,
+      "extraction_s": 0.00043083300079160836,
+      "figure_build_s": 0.013284582999403938,
+      "serialization_s": 0.008050083000853192,
+      "server_total_s": 0.02133466600025713,
+      "response_bytes": 533639,
+      "memory_after_bytes": 3710296064
+    },
+    {
+      "gene": "Akr1c18",
+      "iteration": 4,
+      "extraction_s": 0.0003365419997862773,
+      "figure_build_s": 0.013019666999753099,
+      "serialization_s": 0.007317417001104332,
+      "server_total_s": 0.02033708400085743,
+      "response_bytes": 498511,
+      "memory_after_bytes": 3710296064
+    },
+    {
+      "gene": "Cyp11b2",
+      "iteration": 5,
+      "extraction_s": 0.0004299590000300668,
+      "figure_build_s": 0.014723000000230968,
+      "serialization_s": 0.01718287500079896,
+      "server_total_s": 0.031905875001029926,
+      "response_bytes": 1145157,
+      "memory_after_bytes": 3711078400
+    },
+    {
+      "gene": "Gpc3",
+      "iteration": 5,
+      "extraction_s": 0.00042766600017785095,
+      "figure_build_s": 0.01343033299963281,
+      "serialization_s": 0.006767958000637009,
+      "server_total_s": 0.02019829100026982,
+      "response_bytes": 435127,
+      "memory_after_bytes": 3708272640
+    },
+    {
+      "gene": "Npy",
+      "iteration": 5,
+      "extraction_s": 0.0003684579987748293,
+      "figure_build_s": 0.01372987499962619,
+      "serialization_s": 0.008092791998933535,
+      "server_total_s": 0.021822666998559725,
+      "response_bytes": 533639,
+      "memory_after_bytes": 3709583360
+    },
+    {
+      "gene": "Akr1c18",
+      "iteration": 5,
+      "extraction_s": 0.00035724999906960875,
+      "figure_build_s": 0.013522999999622698,
+      "serialization_s": 0.007375416998911533,
+      "server_total_s": 0.02089841699853423,
+      "response_bytes": 498511,
+      "memory_after_bytes": 3709583360
+    },
+    {
+      "gene": "Cyp11b2",
+      "iteration": 6,
+      "extraction_s": 0.0004069170008733636,
+      "figure_build_s": 0.01399120799942466,
+      "serialization_s": 0.017351458000121056,
+      "server_total_s": 0.031342665999545716,
+      "response_bytes": 1145157,
+      "memory_after_bytes": 3711418368
+    },
+    {
+      "gene": "Gpc3",
+      "iteration": 6,
+      "extraction_s": 0.0004048749997309642,
+      "figure_build_s": 0.041419249999307794,
+      "serialization_s": 0.00671650000003865,
+      "server_total_s": 0.048135749999346444,
+      "response_bytes": 435127,
+      "memory_after_bytes": 3708346368
+    },
+    {
+      "gene": "Npy",
+      "iteration": 6,
+      "extraction_s": 0.00039899999865156133,
+      "figure_build_s": 0.013644667000335176,
+      "serialization_s": 0.008109042000796762,
+      "server_total_s": 0.021753709001131938,
+      "response_bytes": 533639,
+      "memory_after_bytes": 3708870656
+    },
+    {
+      "gene": "Akr1c18",
+      "iteration": 6,
+      "extraction_s": 0.0004047500005981419,
+      "figure_build_s": 0.012978667000425048,
+      "serialization_s": 0.0076433750000433065,
+      "server_total_s": 0.020622042000468355,
+      "response_bytes": 498511,
+      "memory_after_bytes": 3708870656
+    },
+    {
+      "gene": "Cyp11b2",
+      "iteration": 7,
+      "extraction_s": 0.00042229099926771596,
+      "figure_build_s": 0.014350040999488556,
+      "serialization_s": 0.016927667000345537,
+      "server_total_s": 0.03127770799983409,
+      "response_bytes": 1145157,
+      "memory_after_bytes": 3710181376
+    },
+    {
+      "gene": "Gpc3",
+      "iteration": 7,
+      "extraction_s": 0.0003881249995174585,
+      "figure_build_s": 0.013115042000208632,
+      "serialization_s": 0.006800125000154367,
+      "server_total_s": 0.019915167000363,
+      "response_bytes": 435127,
+      "memory_after_bytes": 3707637760
+    },
+    {
+      "gene": "Npy",
+      "iteration": 7,
+      "extraction_s": 0.00035520799974619877,
+      "figure_build_s": 0.01343595800062758,
+      "serialization_s": 0.008383084001252428,
+      "server_total_s": 0.021819042001880007,
+      "response_bytes": 533639,
+      "memory_after_bytes": 3708948480
+    },
+    {
+      "gene": "Akr1c18",
+      "iteration": 7,
+      "extraction_s": 0.0004174589994363487,
+      "figure_build_s": 0.01370104200032074,
+      "serialization_s": 0.007737249999991036,
+      "server_total_s": 0.021438292000311776,
+      "response_bytes": 498511,
+      "memory_after_bytes": 3708948480
+    },
+    {
+      "gene": "Cyp11b2",
+      "iteration": 8,
+      "extraction_s": 0.0004486249999899883,
+      "figure_build_s": 0.013959957999759354,
+      "serialization_s": 0.017056917000445537,
+      "server_total_s": 0.03101687500020489,
+      "response_bytes": 1145157,
+      "memory_after_bytes": 3710259200
+    },
+    {
+      "gene": "Gpc3",
+      "iteration": 8,
+      "extraction_s": 0.00038549999953829683,
+      "figure_build_s": 0.013968957999168197,
+      "serialization_s": 0.006777832999432576,
+      "server_total_s": 0.020746790998600773,
+      "response_bytes": 435127,
+      "memory_after_bytes": 3707715584
+    },
+    {
+      "gene": "Npy",
+      "iteration": 8,
+      "extraction_s": 0.0003610419989854563,
+      "figure_build_s": 0.013517625000531552,
+      "serialization_s": 0.008215124998969259,
+      "server_total_s": 0.02173274999950081,
+      "response_bytes": 533639,
+      "memory_after_bytes": 3709026304
+    },
+    {
+      "gene": "Akr1c18",
+      "iteration": 8,
+      "extraction_s": 0.00036750000072061084,
+      "figure_build_s": 0.013242000000900589,
+      "serialization_s": 0.007436750000124448,
+      "server_total_s": 0.020678750001025037,
+      "response_bytes": 498511,
+      "memory_after_bytes": 3709026304
+    }
+  ],
+  "summary": {
+    "extraction_s": 0.000400374999117048,
+    "figure_build_s": 0.013583833499978937,
+    "serialization_s": 0.007893666500422114,
+    "server_total_s": 0.02134941650001565,
+    "response_bytes": 516075.0,
+    "memory_peak_bytes": 4100640768,
+    "n_measurements": 32
+  }
+}

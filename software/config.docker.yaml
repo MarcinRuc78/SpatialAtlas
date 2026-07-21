@@ -1,0 +1,39 @@
+atlas:
+  title: "SpatialAtlas validated example"
+  subtitle: "10x Genomics Human Lymph Node (Visium v1)"
+  logo: null
+samples:
+  - name: "Human lymph node"
+    h5ad: "/data/sample_human_lymph_node.h5ad"
+    image: "/data/tissue_human_lymph_node.png"
+    scale_factor_x: 0.170111
+    scale_factor_y: 0.170111
+    offset_x: 0
+    offset_y: 0
+    img_xmin: 0
+    img_xmax: 1921
+    img_ymin: 0
+    img_ymax: 2000
+markers_csv: "/data/markers.csv"
+display:
+  default_point_size: 4
+  default_opacity: 0.7
+  default_colorscale: "Transparent-Green"
+  spatial_plot_height: 800
+  max_gene_dropdown: 500
+  layout: "auto"
+multi_gene:
+  gene_a: "CD74"
+  gene_b: "MS4A1"
+  gene_c: "CD3D"
+  gene_d: "COL1A1"
+citation:
+  text: "Example data are from 10x Genomics and licensed CC BY 4.0."
+  authors: "10x Genomics"
+  paper_title: "Human Lymph Node"
+  doi: ""
+  url: "https://www.10xgenomics.com/datasets/human-lymph-node-1-standard-1-0-0"
+server:
+  host: "0.0.0.0"
+  port: 8050
+  debug: false

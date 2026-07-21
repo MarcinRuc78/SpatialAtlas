@@ -1,0 +1,32 @@
+{
+  "title": "SpatialAtlas: interactive visualization and sharing of self-hosted Visium and Visium HD spatial transcriptomics atlases",
+  "upload_type": "software",
+  "description": "SpatialAtlas is a self-hosted Dash application for publishing processed Visium and Visium HD datasets as interactive web atlases. Version 1.0.0 includes the application, reproducible preparation and deployment workflows, worked examples, validation reports, and operational benchmarks.",
+  "creators": [
+    {"name": "Blatkiewicz, Małgorzata", "affiliation": "Poznan University of Medical Sciences"},
+    {"name": "Seraszek-Janos, Agnieszka", "affiliation": "Poznan University of Medical Sciences"},
+    {"name": "Gorna, Agnieszka", "affiliation": "Poznan University of Medical Sciences"},
+    {"name": "Jagielska, Joanna", "affiliation": "Poznan University of Medical Sciences"},
+    {"name": "Rucinski, Marcin", "affiliation": "Poznan University of Medical Sciences"}
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "version": "1.0.0",
+  "publication_date": "2026-07-21",
+  "keywords": [
+    "spatial transcriptomics",
+    "Visium",
+    "Visium HD",
+    "AnnData",
+    "interactive atlas",
+    "Dash",
+    "WebGL"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/MarcinRuc78/SpatialAtlas",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    }
+  ]
+}

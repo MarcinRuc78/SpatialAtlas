@@ -1,0 +1,142 @@
+# =============================================================================
+# SpatialAtlas Configuration File
+# =============================================================================
+# Modify this file to customize the atlas for your own dataset.
+# Supports: Visium (standard), Visium HD (binned or cell-segmented), GEO data.
+# =============================================================================
+
+# --- Project metadata ---
+atlas:
+  title: "SpatialAtlas validated example"
+  subtitle: "10x Genomics Human Lymph Node (Visium v1)"
+  logo: null   # path to logo PNG, or null to hide
+
+# --- Data source type ---
+# Supported: "h5ad", "spaceranger", "spaceranger_hd"
+# If "h5ad" — provide pre-processed .h5ad files directly.
+# If "spaceranger" — provide SpaceRanger output directories (v1.x / v2.x).
+# If "spaceranger_hd" — provide Space Ranger HD output directory (v3.x/v4.x).
+data_source: "h5ad"
+
+# --- For Visium HD: resolution mode ---
+# Only used when data_source is "spaceranger_hd".
+# Options: "8um", "16um", "2um", "cell_segmentation"
+# "cell_segmentation" uses CellPose/StarDist output from SpaceRanger.
+hd_resolution: "8um"
+
+# --- Samples (1 to 4 supported) ---
+# Each sample needs: name, h5ad (or spaceranger_dir), image.
+# The app auto-detects 1/2/3/4 samples and adjusts the subplot layout.
+#
+# Required fields in .h5ad:
+#   .X             — expression matrix (sparse or dense)
+#   .obs['cluster'] — cell/spot cluster labels (string)
+#   .obsm['spatial'] — spatial coordinates (N x 2)
+#   .obsm['UMAP']    — UMAP embedding (N x 2), optional
+#
+# If using SpaceRanger directories, prepare_data.py will generate the .h5ad.
+samples:
+  - name: "Human lymph node"
+    h5ad: "../examples/01_public_visium/output/sample_human_lymph_node.h5ad"
+    image: "../examples/01_public_visium/output/tissue_human_lymph_node.png"
+    # display_image: "tissue_human_lymph_node.webp"  # optional browser-efficient copy
+    scale_factor_x: 0.170111
+    scale_factor_y: 0.170111
+    offset_x: 0
+    offset_y: 0
+    img_xmin: 0
+    img_xmax: 1921
+    img_ymin: 0
+    img_ymax: 2000
+
+
+
+#samples:
+ # - name: "Male"
+ #   h5ad: "/data/sample_male.h5ad"
+ #   image: "/data/tissue_male.png"
+ #   # --- Spatial alignment ---
+ #   # coords_displayed = spatial_fullres * scale_factor - offset
+ #   # Run prepare_data.py to compute these, or calibrate manually.
+ #   scale_factor_x: 0.2020
+ #   scale_factor_y: 0.2020
+ #   offset_x: 120
+ #   offset_y: 119
+ #   img_xmin: 0
+ #   img_xmax: 1718
+ #   img_ymin: 0
+ #   img_ymax: 1688
+
+ # - name: "Female"
+ #   h5ad: "/data/sample_female.h5ad"
+ #   image: "/data/tissue_female.png"
+ #   scale_factor_x: 0.2056
+ #   scale_factor_y: 0.2056
+ #   offset_x: 179
+ #   offset_y: 57
+ #   img_xmin: 0
+ #   img_xmax: 1802
+ #   img_ymin: 0
+ #   img_ymax: 1770
+
+  # --- Uncomment to add 3rd and 4th sample ---
+  # - name: "Treated"
+  #   h5ad: "/data/sample_treated.h5ad"
+  #   image: "/data/tissue_treated.png"
+  #   scale_factor_x: 0.200
+  #   scale_factor_y: 0.200
+  #   offset_x: 0
+  #   offset_y: 0
+  #   img_xmin: 0
+  #   img_xmax: 1800
+  #   img_ymin: 0
+  #   img_ymax: 1600
+  #
+  # - name: "Control"
+  #   h5ad: "/data/sample_control.h5ad"
+  #   image: "/data/tissue_control.png"
+  #   scale_factor_x: 0.200
+  #   scale_factor_y: 0.200
+  #   offset_x: 0
+  #   offset_y: 0
+  #   img_xmin: 0
+  #   img_xmax: 1800
+  #   img_ymin: 0
+  #   img_ymax: 1600
+
+# --- Marker genes table (optional) ---
+markers_csv: "../examples/01_public_visium/output/markers.csv"
+
+# --- Visualization defaults ---
+display:
+  default_point_size: 2.5
+  default_opacity: 0.6
+  default_colorscale: "Transparent-Green"
+  spatial_plot_height: 850
+  max_gene_dropdown: 500
+
+  # Layout for spatial plots: "auto", "1x1", "1x2", "1x3", "1x4", "2x2"
+  # "auto" chooses: 1 sample→1x1, 2→1x2, 3→1x3, 4→2x2
+  layout: "auto"
+
+# --- Multi-gene overlay defaults ---
+multi_gene:
+  gene_a: ""
+  gene_b: ""
+  gene_c: ""
+  gene_d: ""
+
+# --- Citation ---
+citation:
+  text: >
+    Please cite the following paper if you utilize this atlas in your work.
+  authors: "Author A, Author B, Author C"
+  paper_title: "Your Paper Title Here"
+  doi: "https://doi.org/10.xxxx/xxxxx"
+  url: ""
+
+# --- Server ---
+server:
+  host: "0.0.0.0"
+  port: 8050
+  debug: false

@@ -1,0 +1,339 @@
+{
+  "genes": [
+    "CD74",
+    "MS4A1",
+    "CD3D",
+    "COL1A1"
+  ],
+  "runs": [
+    {
+      "gene": "CD74",
+      "iteration": 1,
+      "extraction_s": 0.00017737500093062408,
+      "figure_build_s": 0.010526624999329215,
+      "serialization_s": 0.003598582999984501,
+      "server_total_s": 0.014125207999313716,
+      "response_bytes": 225561,
+      "memory_after_bytes": 677552128
+    },
+    {
+      "gene": "MS4A1",
+      "iteration": 1,
+      "extraction_s": 9.441700058232527e-05,
+      "figure_build_s": 0.010475582999788458,
+      "serialization_s": 0.003855999999359483,
+      "server_total_s": 0.01433158299914794,
+      "response_bytes": 225520,
+      "memory_after_bytes": 677548032
+    },
+    {
+      "gene": "CD3D",
+      "iteration": 1,
+      "extraction_s": 0.00019791699924098793,
+      "figure_build_s": 0.010620958999425056,
+      "serialization_s": 0.0033672080007818295,
+      "server_total_s": 0.013988167000206886,
+      "response_bytes": 211125,
+      "memory_after_bytes": 677548032
+    },
+    {
+      "gene": "COL1A1",
+      "iteration": 1,
+      "extraction_s": 0.00016183400111913215,
+      "figure_build_s": 0.011017500000889413,
+      "serialization_s": 0.002356417000555666,
+      "server_total_s": 0.01337391700144508,
+      "response_bytes": 155617,
+      "memory_after_bytes": 677548032
+    },
+    {
+      "gene": "CD74",
+      "iteration": 2,
+      "extraction_s": 8.033300036913715e-05,
+      "figure_build_s": 0.01070479199916008,
+      "serialization_s": 0.003891166999892448,
+      "server_total_s": 0.014595958999052527,
+      "response_bytes": 225561,
+      "memory_after_bytes": 677810176
+    },
+    {
+      "gene": "MS4A1",
+      "iteration": 2,
+      "extraction_s": 8.99579990800703e-05,
+      "figure_build_s": 0.010061375000077533,
+      "serialization_s": 0.0036350409991428023,
+      "server_total_s": 0.013696415999220335,
+      "response_bytes": 225520,
+      "memory_after_bytes": 677810176
+    },
+    {
+      "gene": "CD3D",
+      "iteration": 2,
+      "extraction_s": 0.00019858399900840595,
+      "figure_build_s": 0.010765207998701953,
+      "serialization_s": 0.0033999579991359496,
+      "server_total_s": 0.014165165997837903,
+      "response_bytes": 211125,
+      "memory_after_bytes": 678072320
+    },
+    {
+      "gene": "COL1A1",
+      "iteration": 2,
+      "extraction_s": 0.0001499579993833322,
+      "figure_build_s": 0.010453959001097246,
+      "serialization_s": 0.002635709000969655,
+      "server_total_s": 0.013089668002066901,
+      "response_bytes": 155617,
+      "memory_after_bytes": 678072320
+    },
+    {
+      "gene": "CD74",
+      "iteration": 3,
+      "extraction_s": 9.345800026494544e-05,
+      "figure_build_s": 0.009885250001389068,
+      "serialization_s": 0.003536541000357829,
+      "server_total_s": 0.013421791001746897,
+      "response_bytes": 225561,
+      "memory_after_bytes": 678072320
+    },
+    {
+      "gene": "MS4A1",
+      "iteration": 3,
+      "extraction_s": 6.837499859102536e-05,
+      "figure_build_s": 0.01054962499983958,
+      "serialization_s": 0.003509666999889305,
+      "server_total_s": 0.014059291999728885,
+      "response_bytes": 225520,
+      "memory_after_bytes": 678072320
+    },
+    {
+      "gene": "CD3D",
+      "iteration": 3,
+      "extraction_s": 0.00015045899999677204,
+      "figure_build_s": 0.01032149999991816,
+      "serialization_s": 0.0035833749989251373,
+      "server_total_s": 0.013904874998843297,
+      "response_bytes": 211125,
+      "memory_after_bytes": 678334464
+    },
+    {
+      "gene": "COL1A1",
+      "iteration": 3,
+      "extraction_s": 0.00010695800119719934,
+      "figure_build_s": 0.009638834000725183,
+      "serialization_s": 0.0025582090001989854,
+      "server_total_s": 0.012197043000924168,
+      "response_bytes": 155617,
+      "memory_after_bytes": 678330368
+    },
+    {
+      "gene": "CD74",
+      "iteration": 4,
+      "extraction_s": 0.000172709000253235,
+      "figure_build_s": 0.010643584000717965,
+      "serialization_s": 0.0036295000008976785,
+      "server_total_s": 0.014273084001615644,
+      "response_bytes": 225561,
+      "memory_after_bytes": 678592512
+    },
+    {
+      "gene": "MS4A1",
+      "iteration": 4,
+      "extraction_s": 9.566699918650556e-05,
+      "figure_build_s": 0.010075374999360065,
+      "serialization_s": 0.00419674999830022,
+      "server_total_s": 0.014272124997660285,
+      "response_bytes": 225520,
+      "memory_after_bytes": 678592512
+    },
+    {
+      "gene": "CD3D",
+      "iteration": 4,
+      "extraction_s": 7.966600060171913e-05,
+      "figure_build_s": 0.010018790999311022,
+      "serialization_s": 0.0034331250008108327,
+      "server_total_s": 0.013451916000121855,
+      "response_bytes": 211125,
+      "memory_after_bytes": 678592512
+    },
+    {
+      "gene": "COL1A1",
+      "iteration": 4,
+      "extraction_s": 0.0001866670008894289,
+      "figure_build_s": 0.011325041001327918,
+      "serialization_s": 0.002523875000406406,
+      "server_total_s": 0.013848916001734324,
+      "response_bytes": 155617,
+      "memory_after_bytes": 678592512
+    },
+    {
+      "gene": "CD74",
+      "iteration": 5,
+      "extraction_s": 0.00014070799988985527,
+      "figure_build_s": 0.010310249999747612,
+      "serialization_s": 0.00384699999995064,
+      "server_total_s": 0.014157249999698251,
+      "response_bytes": 225561,
+      "memory_after_bytes": 678854656
+    },
+    {
+      "gene": "MS4A1",
+      "iteration": 5,
+      "extraction_s": 0.0001947920009115478,
+      "figure_build_s": 0.01049083299949416,
+      "serialization_s": 0.0036213750008755596,
+      "server_total_s": 0.01411220800036972,
+      "response_bytes": 225520,
+      "memory_after_bytes": 678854656
+    },
+    {
+      "gene": "CD3D",
+      "iteration": 5,
+      "extraction_s": 9.141600094153546e-05,
+      "figure_build_s": 0.009742292000737507,
+      "serialization_s": 0.0035584580000431743,
+      "server_total_s": 0.013300750000780681,
+      "response_bytes": 211125,
+      "memory_after_bytes": 678854656
+    },
+    {
+      "gene": "COL1A1",
+      "iteration": 5,
+      "extraction_s": 0.00018291600099473726,
+      "figure_build_s": 0.010864042000321206,
+      "serialization_s": 0.0025660829996922985,
+      "server_total_s": 0.013430125000013504,
+      "response_bytes": 155617,
+      "memory_after_bytes": 678854656
+    },
+    {
+      "gene": "CD74",
+      "iteration": 6,
+      "extraction_s": 9.008300003188197e-05,
+      "figure_build_s": 0.009505250000074739,
+      "serialization_s": 0.0035283340002933983,
+      "server_total_s": 0.013033584000368137,
+      "response_bytes": 225561,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "MS4A1",
+      "iteration": 6,
+      "extraction_s": 8.441699901595712e-05,
+      "figure_build_s": 0.010497957999177743,
+      "serialization_s": 0.0036857499999314314,
+      "server_total_s": 0.014183707999109174,
+      "response_bytes": 225520,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "CD3D",
+      "iteration": 6,
+      "extraction_s": 0.0001850829994509695,
+      "figure_build_s": 0.010496707998754573,
+      "serialization_s": 0.003582625000490225,
+      "server_total_s": 0.014079332999244798,
+      "response_bytes": 211125,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "COL1A1",
+      "iteration": 6,
+      "extraction_s": 9.48329998209374e-05,
+      "figure_build_s": 0.038230874999499065,
+      "serialization_s": 0.0027042919991799863,
+      "server_total_s": 0.04093516699867905,
+      "response_bytes": 155617,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "CD74",
+      "iteration": 7,
+      "extraction_s": 0.00018870900021283887,
+      "figure_build_s": 0.010524915998757933,
+      "serialization_s": 0.003728665999005898,
+      "server_total_s": 0.014253581997763831,
+      "response_bytes": 225561,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "MS4A1",
+      "iteration": 7,
+      "extraction_s": 0.00019616700046753976,
+      "figure_build_s": 0.010878082999624894,
+      "serialization_s": 0.003512667000904912,
+      "server_total_s": 0.014390750000529806,
+      "response_bytes": 225520,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "CD3D",
+      "iteration": 7,
+      "extraction_s": 0.00016375000086554792,
+      "figure_build_s": 0.010603790999084595,
+      "serialization_s": 0.003320042000268586,
+      "server_total_s": 0.01392383299935318,
+      "response_bytes": 211125,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "COL1A1",
+      "iteration": 7,
+      "extraction_s": 0.00019925000015064143,
+      "figure_build_s": 0.010337624999010586,
+      "serialization_s": 0.0026352089989813976,
+      "server_total_s": 0.012972833997991984,
+      "response_bytes": 155617,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "CD74",
+      "iteration": 8,
+      "extraction_s": 0.00018720899970503524,
+      "figure_build_s": 0.010589540999717428,
+      "serialization_s": 0.0035745829991356004,
+      "server_total_s": 0.014164123998853029,
+      "response_bytes": 225561,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "MS4A1",
+      "iteration": 8,
+      "extraction_s": 0.0001381250003760215,
+      "figure_build_s": 0.010567958001047373,
+      "serialization_s": 0.003531209000357194,
+      "server_total_s": 0.014099167001404567,
+      "response_bytes": 225520,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "CD3D",
+      "iteration": 8,
+      "extraction_s": 0.00015741700008220505,
+      "figure_build_s": 0.010849333000805927,
+      "serialization_s": 0.0035622919986053603,
+      "server_total_s": 0.014411624999411288,
+      "response_bytes": 211125,
+      "memory_after_bytes": 679116800
+    },
+    {
+      "gene": "COL1A1",
+      "iteration": 8,
+      "extraction_s": 0.0001569579999340931,
+      "figure_build_s": 0.010616458999720635,
+      "serialization_s": 0.0025776250004128087,
+      "server_total_s": 0.013194084000133444,
+      "response_bytes": 155617,
+      "memory_after_bytes": 679116800
+    }
+  ],
+  "summary": {
+    "extraction_s": 0.00015370849996543257,
+    "figure_build_s": 0.010525770499043574,
+    "serialization_s": 0.0035338750003575115,
+    "server_total_s": 0.014069312499486841,
+    "response_bytes": 218322.5,
+    "memory_peak_bytes": 808349696,
+    "n_measurements": 32
+  }
+}

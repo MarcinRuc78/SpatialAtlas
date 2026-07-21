@@ -1,0 +1,43 @@
+atlas:
+  title: "Visium HD adrenal gland"
+  subtitle: "Female mouse adrenal gland represented by 8 µm bins"
+
+samples:
+  - name: "Adrenal female HD 8 µm"
+    h5ad: "/data/sample_adrenal_female_hd_8um.h5ad"
+    image: "/data/tissue_adrenal_female_hd_8um.png"
+    display_image: "/work/prepared/spatialatlas/tissue_adrenal_female_hd_8um_display.webp"
+    scale_factor_x: 0.205592
+    scale_factor_y: 0.205592
+    offset_x: 0
+    offset_y: 0
+    img_xmin: 0
+    img_xmax: 5684
+    img_ymin: 0
+    img_ymax: 6000
+
+display:
+  default_point_size: 0.5
+  default_opacity: 0.6
+  default_colorscale: "Transparent-Green"
+  spatial_plot_height: 850
+  max_gene_dropdown: 500
+  layout: "auto"
+
+multi_gene:
+  gene_a: "Cyp11b2"
+  gene_b: "Cyp11b1"
+  gene_c: "Npy"
+  gene_d: "Th"
+
+citation:
+  text: "Mouse adrenal Visium HD section from the cited adrenal-cortex study; reuse follows the originating study."
+  authors: "Blatkiewicz et al."
+  paper_title: "Single-cell spatial transcriptomics reveals sex-dependent gene expression and intercellular signalling in mouse adrenal cortex"
+  doi: "10.1038/s42003-026-10697-9"
+  url: "https://www.nature.com/articles/s42003-026-10697-9"
+
+server:
+  host: "0.0.0.0"
+  port: 8050
+  debug: false

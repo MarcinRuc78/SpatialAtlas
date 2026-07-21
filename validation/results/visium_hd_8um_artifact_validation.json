@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "artifact": "examples/02_visium_hd_8um/output/sample_adrenal_female_hd_8um.h5ad",
+  "sha256": "65cf713a5aa58f0f1b303a5b065475f9292e01688c28879016600a500f586686",
+  "image_sha256": "93044e45b51d5ff48aff4395fa97a5f1cbbefc580be314858abe165e9a7390e6",
+  "n_obs": 143112,
+  "n_vars": 15109,
+  "clusters": {
+    "0": 56736,
+    "1": 14774,
+    "2": 9766,
+    "3": 15245,
+    "4": 445,
+    "5": 24765,
+    "6": 9057,
+    "7": 12324
+  },
+  "matrix_type": "csr_matrix",
+  "has_umap": true,
+  "image_size": [
+    5684,
+    6000
+  ],
+  "marker_overlap_rows": null,
+  "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "anndata": "0.10.9",
+  "checks": [
+    {
+      "name": "non_empty",
+      "status": "PASS",
+      "detail": "shape=143112x15109"
+    },
+    {
+      "name": "unique_barcodes",
+      "status": "PASS",
+      "detail": "obs_names are unique"
+    },
+    {
+      "name": "unique_genes",
+      "status": "PASS",
+      "detail": "var_names are unique"
+    },
+    {
+      "name": "cluster",
+      "status": "PASS",
+      "detail": "obs['cluster'] is present"
+    },
+    {
+      "name": "spatial",
+      "status": "PASS",
+      "detail": "obsm['spatial'] is present"
+    },
+    {
+      "name": "spatial_shape",
+      "status": "PASS",
+      "detail": "shape=(143112, 2)"
+    },
+    {
+      "name": "spatial_finite",
+      "status": "PASS",
+      "detail": "all coordinates are finite"
+    },
+    {
+      "name": "umap_shape",
+      "status": "PASS",
+      "detail": "shape=(143112, 2)"
+    },
+    {
+      "name": "umap_finite",
+      "status": "PASS",
+      "detail": "all UMAP values are finite"
+    },
+    {
+      "name": "image",
+      "status": "PASS",
+      "detail": "size=(5684, 6000)"
+    }
+  ]
+}

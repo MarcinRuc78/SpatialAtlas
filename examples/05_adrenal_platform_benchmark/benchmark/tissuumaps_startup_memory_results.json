@@ -1,0 +1,60 @@
+{
+  "protocol": {
+    "image": "cavenel/tissuumaps@sha256:e2f7898c700cd550432cfe546c14546681a4235c27b40c49cbb019e97ab86c06",
+    "version": "3.2.1.14",
+    "host": "Apple M4 Pro",
+    "platform": "linux/amd64 under Docker Desktop",
+    "readiness": "wall time from docker run invocation until HTTP 200 for the prepared CSC HD viewer document containing the 15,109-gene selector",
+    "memory": "container cgroup memory.current two seconds after readiness",
+    "runs": 6,
+    "warm_summary": "first run retained but excluded; median and range of the following five",
+    "server_default": "8 Gunicorn gevent workers as supplied by the official image"
+  },
+  "runs": [
+    {
+      "repetition": 0,
+      "startup_to_hd_viewer_http_200_s": 3.3955957499856595,
+      "steady_memory_bytes": 849661952,
+      "viewer_document_bytes": 5599638
+    },
+    {
+      "repetition": 1,
+      "startup_to_hd_viewer_http_200_s": 3.2872326250071637,
+      "steady_memory_bytes": 851120128,
+      "viewer_document_bytes": 5599638
+    },
+    {
+      "repetition": 2,
+      "startup_to_hd_viewer_http_200_s": 3.2697588749870192,
+      "steady_memory_bytes": 838717440,
+      "viewer_document_bytes": 5599638
+    },
+    {
+      "repetition": 3,
+      "startup_to_hd_viewer_http_200_s": 3.036748541984707,
+      "steady_memory_bytes": 838230016,
+      "viewer_document_bytes": 5599638
+    },
+    {
+      "repetition": 4,
+      "startup_to_hd_viewer_http_200_s": 3.2515027089975774,
+      "steady_memory_bytes": 838848512,
+      "viewer_document_bytes": 5599638
+    },
+    {
+      "repetition": 5,
+      "startup_to_hd_viewer_http_200_s": 3.8462101249897387,
+      "steady_memory_bytes": 855048192,
+      "viewer_document_bytes": 5599638
+    }
+  ],
+  "summary": {
+    "warm_start_median_s": 3.2697588749870192,
+    "warm_start_min_s": 3.036748541984707,
+    "warm_start_max_s": 3.8462101249897387,
+    "warm_memory_median_bytes": 838848512,
+    "warm_memory_min_bytes": 838230016,
+    "warm_memory_max_bytes": 855048192,
+    "viewer_document_bytes": 5599638
+  }
+}

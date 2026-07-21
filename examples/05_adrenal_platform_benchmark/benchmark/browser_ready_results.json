@@ -1,0 +1,27 @@
+{
+  "protocol": {
+    "browser": "Chromium desktop browser with hardware acceleration enabled",
+    "host": "Apple M4 Pro",
+    "network": "127.0.0.1 loopback",
+    "runs_per_prepared_viewer": 5,
+    "spatialatlas_ready_signal": "visible Plotly WebGL canvas after the initial callback rendered the 143112-profile cluster map",
+    "tissuumaps_ready_signal": "visible gene-expression selector containing 15109 genes after loading the CSC H5AD and OpenSeadragon viewer",
+    "interpretation": "wall time includes local HTTP transfer, JavaScript parsing, layout and client rendering on the tested browser/GPU path; GPU execution time was not isolated"
+  },
+  "spatialatlas": {
+    "url": "http://127.0.0.1:18053/",
+    "ready_ms": [327, 194, 233, 316, 202]
+  },
+  "spatialatlas_preoptimization_record": {
+    "ready_ms": [1410, 886, 1577, 413, 1448],
+    "note": "retained same-host baseline before typed-array serialization, deferred hidden-tab callbacks and the WebP display image"
+  },
+  "tissuumaps_prepared_csc": {
+    "url": "http://127.0.0.1:18051/adrenal_hd_tissuumaps_tmap.h5ad",
+    "ready_ms": [682, 648, 666, 749, 682]
+  },
+  "tissuumaps_unprepared_csr": {
+    "first_server_response_s": 4.06,
+    "note": "first request created a 643 MiB CSC copy and image pyramid from the 345 MiB adapter; repeated deployed comparisons use the prepared CSC URL"
+  }
+}

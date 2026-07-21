@@ -1,0 +1,7 @@
+status: PASS
+test_date: 2026-07-20
+female_position_rows: 52491
+male_position_rows: 62062
+first_identifier: cellid_000000001-1
+first_identifier_preserved: PASS
+header_detection: PASS

@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "config": "/package/validation/technology_benchmark/config_multisample_adrenal.yaml",
+  "import_seconds": 3.183506835004664,
+  "n_obs": 110823,
+  "n_genes": 17173,
+  "n_samples": 2,
+  "expression_cache_gib": 0.6239828392863274,
+  "gene": "Cyp11b2",
+  "checks": {
+    "spatial_cluster": {
+      "status": "PASS",
+      "seconds": 0.10430120800447185,
+      "traces": 16,
+      "json_bytes": 1243213
+    },
+    "spatial_gene": {
+      "status": "PASS",
+      "seconds": 0.028109166996728163,
+      "traces": 2,
+      "json_bytes": 371396
+    },
+    "umap": {
+      "status": "PASS",
+      "seconds": 0.12206016599520808,
+      "traces": 1,
+      "json_bytes": 2567829
+    },
+    "violin": {
+      "status": "PASS",
+      "seconds": 0.19948066600045422,
+      "traces": 16,
+      "json_bytes": 1053936
+    },
+    "heatmap": {
+      "status": "PASS",
+      "seconds": 0.062024207996728364,
+      "traces": 1,
+      "json_bytes": 9546
+    },
+    "multi_gene": {
+      "status": "PASS",
+      "seconds": 0.027949125003942754,
+      "traces": 8,
+      "json_bytes": 833673
+    },
+    "http": {
+      "status": "PASS",
+      "root_status": 200,
+      "image_status": 200,
+      "image_cache_control": "public, max-age=3600"
+    }
+  }
+}

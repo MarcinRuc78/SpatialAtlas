@@ -1,0 +1,113 @@
+{
+  "protocol": {
+    "host": "Apple M4 Pro",
+    "platform": "linux/amd64 Docker for all four scenarios",
+    "spatialatlas_image": "spatialatlas-benchmark:amd64",
+    "shiny_image": "satijalab/seurat@sha256:048d965487afc2961c450879692281a73e24f6de47360ed2f11b31112ebd844e",
+    "readiness": "wall time from docker run invocation to HTTP 200 at root",
+    "memory": "container cgroup memory.current sampled 2 s after readiness",
+    "runs_per_scenario": 6,
+    "warm_summary": "first observation excluded; median and range of the next five",
+    "spatialatlas_workers": 1
+  },
+  "summary": [
+    {
+      "scenario": "seurat_shiny_visium",
+      "label": "Seurat/Shiny \u2014 classic Visium adrenal",
+      "profiles": 992,
+      "genes": 19465,
+      "object_mib": 39.13877773284912,
+      "warm_start_median_s": 4.658092541998485,
+      "warm_start_min_s": 4.470576624997193,
+      "warm_start_max_s": 5.042456499999389,
+      "steady_memory_median_mib": 735.5,
+      "steady_memory_min_mib": 733.16796875,
+      "steady_memory_max_mib": 736.546875,
+      "gene_response_median_ms": 239.0,
+      "gene_response_min_ms": 231.00000000000202,
+      "gene_response_max_ms": 406.000000000001,
+      "payload_median_kib": 569.568359375,
+      "payload_min_kib": 567.1064453125,
+      "payload_max_kib": 589.1357421875
+    },
+    {
+      "scenario": "spatialatlas_visium",
+      "label": "SpatialAtlas \u2014 classic Visium adrenal",
+      "profiles": 992,
+      "genes": 19465,
+      "object_mib": 11.62846565246582,
+      "warm_start_median_s": 1.783950167009607,
+      "warm_start_min_s": 1.706963167001959,
+      "warm_start_max_s": 1.9722144590050448,
+      "steady_memory_median_mib": 243.171875,
+      "steady_memory_min_mib": 241.46875,
+      "steady_memory_max_mib": 245.4453125,
+      "gene_response_median_ms": 17.565395501151215,
+      "gene_response_min_ms": 16.456001001643017,
+      "gene_response_max_ms": 50.23020899534458,
+      "payload_median_kib": 18.9873046875,
+      "payload_min_kib": 18.662109375,
+      "payload_max_kib": 22.361328125
+    },
+    {
+      "scenario": "seurat_shiny_visium_hd",
+      "label": "Shiny \u2014 Visium HD adrenal, 8 \u00b5m",
+      "profiles": 143112,
+      "genes": 15109,
+      "object_mib": 50.98972702026367,
+      "warm_start_median_s": 6.206464582995977,
+      "warm_start_min_s": 6.075688416021876,
+      "warm_start_max_s": 6.24506637500599,
+      "steady_memory_median_mib": 977.5546875,
+      "steady_memory_min_mib": 974.3515625,
+      "steady_memory_max_mib": 977.62109375,
+      "gene_response_median_ms": 778.4999999999995,
+      "gene_response_min_ms": 760.999999999999,
+      "gene_response_max_ms": 869.0,
+      "payload_median_kib": 782.0380859375,
+      "payload_min_kib": 762.3193359375,
+      "payload_max_kib": 784.8583984375
+    },
+    {
+      "scenario": "spatialatlas_visium_hd",
+      "label": "SpatialAtlas \u2014 Visium HD adrenal, 8 \u00b5m",
+      "profiles": 143112,
+      "genes": 15109,
+      "object_mib": 313.2536573410034,
+      "warm_start_median_s": 2.0941898330056574,
+      "warm_start_min_s": 2.0657440830254927,
+      "warm_start_max_s": 2.180104666011175,
+      "steady_memory_median_mib": 848.91796875,
+      "steady_memory_min_mib": 847.06640625,
+      "steady_memory_max_mib": 850.05078125,
+      "gene_response_median_ms": 21.027833499829285,
+      "gene_response_min_ms": 19.431249995250255,
+      "gene_response_max_ms": 55.68766600481467,
+      "payload_median_kib": 213.2958984375,
+      "payload_min_kib": 145.9091796875,
+      "payload_max_kib": 1368.5810546875
+    }
+  ],
+  "ratios": {
+    "classic_spatialatlas_vs_shiny": {
+      "startup_fold_faster": 2.611111357335017,
+      "memory_fold_lower": 3.024609651095547,
+      "gene_response_fold_faster": 13.6062976768349,
+      "payload_fold_smaller": 29.99732551560973
+    },
+    "hd_spatialatlas_vs_shiny": {
+      "startup_fold_faster": 2.9636590175248028,
+      "spatialatlas_memory_vs_shiny": 0.8684096957491189,
+      "gene_response_fold_faster": 37.02235896086584,
+      "payload_fold_smaller": 3.666446901540645
+    },
+    "visium_hd_vs_classic_spatialatlas": {
+      "profile_count_fold": 144.26612903225808,
+      "startup_fold": 1.1739060158368089,
+      "memory_fold": 3.4910203688234915,
+      "gene_response_fold": 1.1971169962242607,
+      "payload_fold": 11.233605925011572
+    }
+  },
+  "interpretation": "The classic Visium pair and the Visium HD pair are matched implementation comparisons. Within each pair, Shiny and SpatialAtlas use the same expression values, coordinates, histology and markers."
+}

@@ -1,0 +1,11 @@
+metric,spatialatlas,tissuumaps,unit,n_per_viewer_or_level,note
+warm_server_startup_median,2.0941898330056574,3.2697588749870192,s,5,SpatialAtlas root HTTP 200; prepared TissUUmaps HD viewer HTTP 200
+steady_container_memory_median,848.91796875,799.98828125,MiB,5,cgroup memory.current two seconds after readiness
+browser_visual_readiness_median,0.233,0.682,s,5,rendered 143112-profile WebGL map versus prepared OpenSeadragon viewer and gene selector
+prepared_primary_object,313.2536573410034,642.9660453796387,MiB,1,deployed TissUUmaps viewer also uses an 11.9 MiB pyramid; both URL-specific copies are retained
+display_image_transfer,5.030927658081055,,MiB,1,"full-dimension WebP, PSNR 37.71 dB; archival PNG retained"
+first_unprepared_request,,4.06,s,1,CSR-to-CSC conversion and image-pyramid creation
+concurrent_1_user_p95,0.04775098341633565,,s,5,5.13 MiB uncached first-visit bundle; 0 errors
+concurrent_5_users_p95,0.1462570495903492,,s,25,5.13 MiB uncached first-visit bundle; 0 errors
+concurrent_10_users_p95,0.251770225004293,,s,50,5.13 MiB uncached first-visit bundle; 0 errors
+concurrent_20_users_p95,0.4682327666552737,,s,100,5.13 MiB uncached first-visit bundle; 0 errors

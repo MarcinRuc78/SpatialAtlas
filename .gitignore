@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+release-assets/
+*.tar.gz
+*.zip
+examples/05_adrenal_platform_benchmark/benchmark/plots/*.png
+examples/05_adrenal_platform_benchmark/benchmark/plots/*.svg
+~$*

@@ -1,0 +1,2593 @@
+{
+  "protocol": {
+    "application": "SpatialAtlas Visium HD adrenal 8 um",
+    "base_url": "http://127.0.0.1:18053",
+    "concurrency_levels": [
+      1,
+      5,
+      10,
+      20
+    ],
+    "rounds_per_level": 5,
+    "request_bundle": [
+      "/",
+      "/_dash-layout",
+      "/_dash-dependencies",
+      "/_spatialatlas/tissue/0"
+    ],
+    "cache": "disabled in urllib; complete histology transferred for every virtual user's first visit",
+    "scope": "HTTP bootstrap and image transfer; browser parsing and WebGL are reported separately"
+  },
+  "summary": {
+    "1": {
+      "sessions": 5,
+      "errors": 0,
+      "session_median_s": 0.027640791988233104,
+      "session_p95_s": 0.04775098341633565,
+      "session_min_s": 0.026732875005109236,
+      "session_max_s": 0.05250412502209656,
+      "median_batch_s": 0.027946457994403318,
+      "aggregate_sessions_per_s": 24.09700498210185,
+      "aggregate_mib_per_s": 123.67685956624626,
+      "bytes_per_successful_session": 5381772
+    },
+    "5": {
+      "sessions": 25,
+      "errors": 0,
+      "session_median_s": 0.13088254199828953,
+      "session_p95_s": 0.1462570495903492,
+      "session_min_s": 0.12127654202049598,
+      "session_max_s": 0.14819204100058414,
+      "median_batch_s": 0.1329512080119457,
+      "aggregate_sessions_per_s": 36.45779249627276,
+      "aggregate_mib_per_s": 187.11807903122983,
+      "bytes_per_successful_session": 5381772
+    },
+    "10": {
+      "sessions": 50,
+      "errors": 0,
+      "session_median_s": 0.23874458350474015,
+      "session_p95_s": 0.251770225004293,
+      "session_min_s": 0.18410533302812837,
+      "session_max_s": 0.25705212500179186,
+      "median_batch_s": 0.2501004160149023,
+      "aggregate_sessions_per_s": 39.89444061764429,
+      "aggregate_mib_per_s": 204.75653025789336,
+      "bytes_per_successful_session": 5381772
+    },
+    "20": {
+      "sessions": 100,
+      "errors": 0,
+      "session_median_s": 0.41126437499769963,
+      "session_p95_s": 0.4682327666552737,
+      "session_min_s": 0.26544108300004154,
+      "session_max_s": 0.48141300000133924,
+      "median_batch_s": 0.47092737501952797,
+      "aggregate_sessions_per_s": 42.70640376490913,
+      "aggregate_mib_per_s": 219.18881225841767,
+      "bytes_per_successful_session": 5381772
+    }
+  },
+  "runs": [
+    {
+      "user_id": 0,
+      "elapsed_s": 0.05250412502209656,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 1,
+      "round": 0
+    },
+    {
+      "user_id": 1000,
+      "elapsed_s": 0.02873841699329205,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 1,
+      "round": 1
+    },
+    {
+      "user_id": 2000,
+      "elapsed_s": 0.027640791988233104,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 1,
+      "round": 2
+    },
+    {
+      "user_id": 3000,
+      "elapsed_s": 0.02758987501147203,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 1,
+      "round": 3
+    },
+    {
+      "user_id": 4000,
+      "elapsed_s": 0.026732875005109236,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 1,
+      "round": 4
+    },
+    {
+      "user_id": 0,
+      "elapsed_s": 0.14111745802802034,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 0
+    },
+    {
+      "user_id": 1,
+      "elapsed_s": 0.13294179199147038,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 0
+    },
+    {
+      "user_id": 2,
+      "elapsed_s": 0.1411197079869453,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 0
+    },
+    {
+      "user_id": 3,
+      "elapsed_s": 0.13118412499898113,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 0
+    },
+    {
+      "user_id": 4,
+      "elapsed_s": 0.13355895798304118,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 0
+    },
+    {
+      "user_id": 1000,
+      "elapsed_s": 0.13940208399435505,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 1
+    },
+    {
+      "user_id": 1001,
+      "elapsed_s": 0.14531358401291072,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 1
+    },
+    {
+      "user_id": 1002,
+      "elapsed_s": 0.14819204100058414,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 1
+    },
+    {
+      "user_id": 1003,
+      "elapsed_s": 0.14649291598470882,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 1
+    },
+    {
+      "user_id": 1004,
+      "elapsed_s": 0.14377466699806973,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 1
+    },
+    {
+      "user_id": 2000,
+      "elapsed_s": 0.12744445900898427,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 2
+    },
+    {
+      "user_id": 2001,
+      "elapsed_s": 0.1266942500078585,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 2
+    },
+    {
+      "user_id": 2002,
+      "elapsed_s": 0.12127654202049598,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 2
+    },
+    {
+      "user_id": 2003,
+      "elapsed_s": 0.12323483399813995,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 2
+    },
+    {
+      "user_id": 2004,
+      "elapsed_s": 0.13004670801456086,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 2
+    },
+    {
+      "user_id": 3000,
+      "elapsed_s": 0.12404525000602007,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 3
+    },
+    {
+      "user_id": 3001,
+      "elapsed_s": 0.13252783301868476,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 3
+    },
+    {
+      "user_id": 3002,
+      "elapsed_s": 0.131635166995693,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 3
+    },
+    {
+      "user_id": 3003,
+      "elapsed_s": 0.12919470900669694,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 3
+    },
+    {
+      "user_id": 3004,
+      "elapsed_s": 0.1272975000028964,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 3
+    },
+    {
+      "user_id": 4000,
+      "elapsed_s": 0.12391437502810732,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 4
+    },
+    {
+      "user_id": 4001,
+      "elapsed_s": 0.1278806249902118,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 4
+    },
+    {
+      "user_id": 4002,
+      "elapsed_s": 0.13088254199828953,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 4
+    },
+    {
+      "user_id": 4003,
+      "elapsed_s": 0.12877904198830947,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 4
+    },
+    {
+      "user_id": 4004,
+      "elapsed_s": 0.12422987498575822,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 5,
+      "round": 4
+    },
+    {
+      "user_id": 0,
+      "elapsed_s": 0.2395296249887906,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 0
+    },
+    {
+      "user_id": 1,
+      "elapsed_s": 0.24600529202143662,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 0
+    },
+    {
+      "user_id": 2,
+      "elapsed_s": 0.23163416699389927,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 0
+    },
+    {
+      "user_id": 3,
+      "elapsed_s": 0.24084533299901523,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 0
+    },
+    {
+      "user_id": 4,
+      "elapsed_s": 0.2386889999906998,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 0
+    },
+    {
+      "user_id": 5,
+      "elapsed_s": 0.24390329199377447,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 0
+    },
+    {
+      "user_id": 6,
+      "elapsed_s": 0.2501709159987513,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 0
+    },
+    {
+      "user_id": 7,
+      "elapsed_s": 0.24982712502242066,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 0
+    },
+    {
+      "user_id": 8,
+      "elapsed_s": 0.2555475840053987,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 0
+    },
+    {
+      "user_id": 9,
+      "elapsed_s": 0.25705212500179186,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 0
+    },
+    {
+      "user_id": 1000,
+      "elapsed_s": 0.24894112499896437,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 1
+    },
+    {
+      "user_id": 1001,
+      "elapsed_s": 0.24001387500902638,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 1
+    },
+    {
+      "user_id": 1002,
+      "elapsed_s": 0.1961870840168558,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 1
+    },
+    {
+      "user_id": 1003,
+      "elapsed_s": 0.21895124998991378,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 1
+    },
+    {
+      "user_id": 1004,
+      "elapsed_s": 0.20409379102056846,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 1
+    },
+    {
+      "user_id": 1005,
+      "elapsed_s": 0.2419122910068836,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 1
+    },
+    {
+      "user_id": 1006,
+      "elapsed_s": 0.24343825000687502,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 1
+    },
+    {
+      "user_id": 1007,
+      "elapsed_s": 0.24859479200677015,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 1
+    },
+    {
+      "user_id": 1008,
+      "elapsed_s": 0.24544295901432633,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 1
+    },
+    {
+      "user_id": 1009,
+      "elapsed_s": 0.236359167000046,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 1
+    },
+    {
+      "user_id": 2000,
+      "elapsed_s": 0.22091695800190791,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 2
+    },
+    {
+      "user_id": 2001,
+      "elapsed_s": 0.21443699998781085,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 2
+    },
+    {
+      "user_id": 2002,
+      "elapsed_s": 0.24585150001803413,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 2
+    },
+    {
+      "user_id": 2003,
+      "elapsed_s": 0.2269904580025468,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 2
+    },
+    {
+      "user_id": 2004,
+      "elapsed_s": 0.24600491698947735,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 2
+    },
+    {
+      "user_id": 2005,
+      "elapsed_s": 0.23390824999660254,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 2
+    },
+    {
+      "user_id": 2006,
+      "elapsed_s": 0.24975379201350734,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 2
+    },
+    {
+      "user_id": 2007,
+      "elapsed_s": 0.2522515000018757,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 2
+    },
+    {
+      "user_id": 2008,
+      "elapsed_s": 0.24110741700860672,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 2
+    },
+    {
+      "user_id": 2009,
+      "elapsed_s": 0.25118200000724755,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 2
+    },
+    {
+      "user_id": 3000,
+      "elapsed_s": 0.21142370800953358,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 3
+    },
+    {
+      "user_id": 3001,
+      "elapsed_s": 0.21191658297902904,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 3
+    },
+    {
+      "user_id": 3002,
+      "elapsed_s": 0.18410533302812837,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 3
+    },
+    {
+      "user_id": 3003,
+      "elapsed_s": 0.23483687499538064,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 3
+    },
+    {
+      "user_id": 3004,
+      "elapsed_s": 0.19307662500068545,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 3
+    },
+    {
+      "user_id": 3005,
+      "elapsed_s": 0.22907237499020994,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 3
+    },
+    {
+      "user_id": 3006,
+      "elapsed_s": 0.21970829099882394,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 3
+    },
+    {
+      "user_id": 3007,
+      "elapsed_s": 0.23756479198345914,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 3
+    },
+    {
+      "user_id": 3008,
+      "elapsed_s": 0.22132645797682926,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 3
+    },
+    {
+      "user_id": 3009,
+      "elapsed_s": 0.23880016701878048,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 3
+    },
+    {
+      "user_id": 4000,
+      "elapsed_s": 0.23612016599508934,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 4
+    },
+    {
+      "user_id": 4001,
+      "elapsed_s": 0.23064920800970867,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 4
+    },
+    {
+      "user_id": 4002,
+      "elapsed_s": 0.19188612498692237,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 4
+    },
+    {
+      "user_id": 4003,
+      "elapsed_s": 0.24937733399565332,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 4
+    },
+    {
+      "user_id": 4004,
+      "elapsed_s": 0.200334584020311,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 4
+    },
+    {
+      "user_id": 4005,
+      "elapsed_s": 0.24772308400133625,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 4
+    },
+    {
+      "user_id": 4006,
+      "elapsed_s": 0.20239979200414382,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 4
+    },
+    {
+      "user_id": 4007,
+      "elapsed_s": 0.21911587499198504,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 4
+    },
+    {
+      "user_id": 4008,
+      "elapsed_s": 0.24150166698382236,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 4
+    },
+    {
+      "user_id": 4009,
+      "elapsed_s": 0.24310804199194536,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 10,
+      "round": 4
+    },
+    {
+      "user_id": 0,
+      "elapsed_s": 0.39337012500618584,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 1,
+      "elapsed_s": 0.3676652079739142,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 2,
+      "elapsed_s": 0.39201329098432325,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 3,
+      "elapsed_s": 0.3445793330029119,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 4,
+      "elapsed_s": 0.39210041699698195,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 5,
+      "elapsed_s": 0.36719020901364274,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 6,
+      "elapsed_s": 0.38016966701252386,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 7,
+      "elapsed_s": 0.3787290829932317,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 8,
+      "elapsed_s": 0.3917634170211386,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 9,
+      "elapsed_s": 0.43715537499519996,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 10,
+      "elapsed_s": 0.4294820420036558,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 11,
+      "elapsed_s": 0.43811141699552536,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 12,
+      "elapsed_s": 0.4167879169981461,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 13,
+      "elapsed_s": 0.44418437499552965,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 14,
+      "elapsed_s": 0.4329446670017205,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 15,
+      "elapsed_s": 0.4259708750178106,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 16,
+      "elapsed_s": 0.45081862501683645,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 17,
+      "elapsed_s": 0.4468179169925861,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 18,
+      "elapsed_s": 0.44523283300804906,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 19,
+      "elapsed_s": 0.4432385840045754,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 0
+    },
+    {
+      "user_id": 1000,
+      "elapsed_s": 0.3492897500109393,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1001,
+      "elapsed_s": 0.3729434590204619,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1002,
+      "elapsed_s": 0.4062561659957282,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1003,
+      "elapsed_s": 0.37098325000260957,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1004,
+      "elapsed_s": 0.3950382499897387,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1005,
+      "elapsed_s": 0.38265433398191817,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1006,
+      "elapsed_s": 0.42919729099958204,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1007,
+      "elapsed_s": 0.4282629159861244,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1008,
+      "elapsed_s": 0.3379667499975767,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1009,
+      "elapsed_s": 0.4301487500197254,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1010,
+      "elapsed_s": 0.3297807500057388,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1011,
+      "elapsed_s": 0.3314258750178851,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1012,
+      "elapsed_s": 0.42639174999203533,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1013,
+      "elapsed_s": 0.4489681250124704,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1014,
+      "elapsed_s": 0.42798383301123977,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1015,
+      "elapsed_s": 0.46012087501003407,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1016,
+      "elapsed_s": 0.4714073749782983,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1017,
+      "elapsed_s": 0.4626070419908501,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1018,
+      "elapsed_s": 0.45289745801710524,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 1019,
+      "elapsed_s": 0.47052020800765604,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 1
+    },
+    {
+      "user_id": 2000,
+      "elapsed_s": 0.3228957499959506,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2001,
+      "elapsed_s": 0.27368733298499137,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2002,
+      "elapsed_s": 0.26544108300004154,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2003,
+      "elapsed_s": 0.2741203749901615,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2004,
+      "elapsed_s": 0.29680041698156856,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2005,
+      "elapsed_s": 0.3148460419906769,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2006,
+      "elapsed_s": 0.39980520799872465,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2007,
+      "elapsed_s": 0.37502545898314565,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2008,
+      "elapsed_s": 0.4522138749889564,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2009,
+      "elapsed_s": 0.3983606670226436,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2010,
+      "elapsed_s": 0.3921788749867119,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2011,
+      "elapsed_s": 0.4138434169872198,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2012,
+      "elapsed_s": 0.46624024998163804,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2013,
+      "elapsed_s": 0.40873549997922964,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2014,
+      "elapsed_s": 0.40894725001999177,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2015,
+      "elapsed_s": 0.42199037500540726,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2016,
+      "elapsed_s": 0.45759166599600576,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2017,
+      "elapsed_s": 0.46811237500514835,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2018,
+      "elapsed_s": 0.4511897499905899,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 2019,
+      "elapsed_s": 0.46320208298857324,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 2
+    },
+    {
+      "user_id": 3000,
+      "elapsed_s": 0.36452287502470426,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3001,
+      "elapsed_s": 0.36783550001564436,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3002,
+      "elapsed_s": 0.3999469999980647,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3003,
+      "elapsed_s": 0.363974917010637,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3004,
+      "elapsed_s": 0.41342183301458135,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3005,
+      "elapsed_s": 0.37919387497822754,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3006,
+      "elapsed_s": 0.36100224999245256,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3007,
+      "elapsed_s": 0.3918039159907494,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3008,
+      "elapsed_s": 0.36705325002549216,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3009,
+      "elapsed_s": 0.3346697499800939,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3010,
+      "elapsed_s": 0.40126499999314547,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3011,
+      "elapsed_s": 0.4249692919838708,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3012,
+      "elapsed_s": 0.4452538750192616,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3013,
+      "elapsed_s": 0.42207466601394117,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3014,
+      "elapsed_s": 0.4180742499884218,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3015,
+      "elapsed_s": 0.44311637501232326,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3016,
+      "elapsed_s": 0.4545367920072749,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3017,
+      "elapsed_s": 0.43948295898735523,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3018,
+      "elapsed_s": 0.44249379201210104,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 3019,
+      "elapsed_s": 0.45437099999981,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 3
+    },
+    {
+      "user_id": 4000,
+      "elapsed_s": 0.31450104201212525,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4001,
+      "elapsed_s": 0.36720145898289047,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4002,
+      "elapsed_s": 0.29793208301998675,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4003,
+      "elapsed_s": 0.354388415988069,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4004,
+      "elapsed_s": 0.3156804589962121,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4005,
+      "elapsed_s": 0.4577344169956632,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4006,
+      "elapsed_s": 0.393216583004687,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4007,
+      "elapsed_s": 0.33246133400825784,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4008,
+      "elapsed_s": 0.3300296670058742,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4009,
+      "elapsed_s": 0.3575419580156449,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4010,
+      "elapsed_s": 0.4435363330121618,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4011,
+      "elapsed_s": 0.4538809169898741,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4012,
+      "elapsed_s": 0.4407929170120042,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4013,
+      "elapsed_s": 0.4110960830003023,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4014,
+      "elapsed_s": 0.41143266699509695,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4015,
+      "elapsed_s": 0.45416379199014045,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4016,
+      "elapsed_s": 0.47129162499913946,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4017,
+      "elapsed_s": 0.463546375016449,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4018,
+      "elapsed_s": 0.4794490000058431,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    },
+    {
+      "user_id": 4019,
+      "elapsed_s": 0.48141300000133924,
+      "bytes": 5381772,
+      "statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "error": null,
+      "concurrent_users": 20,
+      "round": 4
+    }
+  ]
+}

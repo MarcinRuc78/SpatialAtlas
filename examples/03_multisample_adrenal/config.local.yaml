@@ -1,0 +1,50 @@
+atlas:
+  title: "Sex-specific mouse adrenal gland atlas"
+  subtitle: "Female and male Visium HD sections"
+  logo: null
+samples:
+  - name: "Female"
+    h5ad: "./input/female/sample_female.h5ad"
+    image: "./input/female/tissue_female.png"
+    scale_factor_x: 0.2056
+    scale_factor_y: 0.2056
+    offset_x: 0
+    offset_y: 0
+    img_xmin: 0
+    img_xmax: 5684
+    img_ymin: 0
+    img_ymax: 6000
+  - name: "Male"
+    h5ad: "./input/male/sample_male.h5ad"
+    image: "./input/male/tissue_male.png"
+    scale_factor_x: 0.202
+    scale_factor_y: 0.202
+    offset_x: 0
+    offset_y: 0
+    img_xmin: 0
+    img_xmax: 6000
+    img_ymin: 0
+    img_ymax: 5069
+markers_csv: "./input/markers.csv"
+display:
+  default_point_size: 0.5
+  default_opacity: 0.6
+  default_colorscale: "Transparent-Green"
+  spatial_plot_height: 850
+  max_gene_dropdown: 500
+  layout: "auto"
+multi_gene:
+  gene_a: "Cyp11b2"
+  gene_b: "Gpc3"
+  gene_c: "Npy"
+  gene_d: "Akr1c18"
+citation:
+  text: "Please cite SpatialAtlas and the originating Visium HD adrenal-cortex study."
+  authors: "Blatkiewicz et al."
+  paper_title: "Single-cell spatial transcriptomics reveals sex-dependent gene expression and intercellular signalling in mouse adrenal cortex"
+  doi: "10.1038/s42003-026-10697-9"
+  url: "https://www.nature.com/articles/s42003-026-10697-9"
+server:
+  host: "127.0.0.1"
+  port: 8052
+  debug: false

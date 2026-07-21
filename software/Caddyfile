@@ -1,0 +1,22 @@
+ # Replace YOUR_DOMAIN with your actual domain name.
+# Caddy will automatically obtain and renew a Let's Encrypt TLS certificate.
+#
+# Option A: Custom domain (e.g., atlas.yourdomain.com)
+# Option B: Free DuckDNS subdomain (e.g., myatlas.duckdns.org)
+#
+# For DuckDNS setup see: https://www.duckdns.org/
+
+YOUR_DOMAIN.duckdns.org {
+    encode zstd gzip
+
+    handle /health {
+        respond "ok" 200
+    }
+
+    reverse_proxy spatialatlas:8050 {
+        transport http {
+            read_timeout 120s
+            dial_timeout 120s
+        }
+    }
+}

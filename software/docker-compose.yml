@@ -1,0 +1,39 @@
+services:
+  spatialatlas:
+    build: .
+    image: spatialatlas:latest
+    container_name: spatialatlas
+    restart: unless-stopped
+    mem_limit: ${SPATIALATLAS_MEMORY_LIMIT:-8g}
+    expose:
+      - "8050"
+    environment:
+      SPATIALATLAS_CONFIG: /app/config.yaml
+    volumes:
+      - ${SPATIALATLAS_DATA_DIR:-../examples/01_public_visium/output}:/data:ro
+      - ./assets:/app/assets:ro
+      - ${SPATIALATLAS_CONFIG_FILE:-../examples/01_public_visium/config.docker.yaml}:/app/config.yaml:ro
+    networks:
+      - web
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - web
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  web:
+    driver: bridge

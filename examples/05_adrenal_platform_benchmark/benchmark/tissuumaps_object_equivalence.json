@@ -1,0 +1,49 @@
+{
+  "original": "/package/examples/02_visium_hd_8um/output/sample_adrenal_female_hd_8um.h5ad",
+  "adapter": "/bench/adrenal_hd_tissuumaps.h5ad",
+  "tissuumaps_converted": "/bench/adrenal_hd_tissuumaps_tmap.h5ad",
+  "shape": [
+    143112,
+    15109
+  ],
+  "nonzero_values": 39058199,
+  "adapter_exact_dataset_checks": {
+    "X/data": {
+      "original_sha256": "47b531b95acc34c223ecd102e7bb0feb319598d56c161bd6c9df16e25c36031b",
+      "adapter_sha256": "47b531b95acc34c223ecd102e7bb0feb319598d56c161bd6c9df16e25c36031b",
+      "identical": true
+    },
+    "X/indices": {
+      "original_sha256": "091ccab52cda8b080dace2399d5d26d025980bc2e8ef4734e8ed1c5b09cc1462",
+      "adapter_sha256": "091ccab52cda8b080dace2399d5d26d025980bc2e8ef4734e8ed1c5b09cc1462",
+      "identical": true
+    },
+    "X/indptr": {
+      "original_sha256": "ba74de364d5a032087244a9f2eae1766b817ddc28f81845d93f3bc23416b4831",
+      "adapter_sha256": "ba74de364d5a032087244a9f2eae1766b817ddc28f81845d93f3bc23416b4831",
+      "identical": true
+    },
+    "obs/_index": {
+      "original_sha256": "6bb40023e8b1eb83f1a8d82c73f6e4549fb0bfce0a6215db192d35e278842cc6",
+      "adapter_sha256": "6bb40023e8b1eb83f1a8d82c73f6e4549fb0bfce0a6215db192d35e278842cc6",
+      "identical": true
+    },
+    "var/_index": {
+      "original_sha256": "d47f45bedbb0ec47a5cd4c33816ffd81424348afc06a020a29f9efabde9372b5",
+      "adapter_sha256": "d47f45bedbb0ec47a5cd4c33816ffd81424348afc06a020a29f9efabde9372b5",
+      "identical": true
+    },
+    "obsm/spatial": {
+      "original_sha256": "f4ea518b2085411ac024d3d2c46a23238f6ba4e0e2fdd543d478da9e87e2bd19",
+      "adapter_sha256": "f4ea518b2085411ac024d3d2c46a23238f6ba4e0e2fdd543d478da9e87e2bd19",
+      "identical": true
+    }
+  },
+  "all_adapter_checks_passed": true,
+  "converted_encoding": "csc_matrix",
+  "converted_matrix_numerically_identical": true,
+  "converted_difference_nonzero": 0,
+  "converted_spatial_coordinates_identical": true,
+  "converted_observation_ids_identical": true,
+  "converted_gene_ids_identical": true
+}

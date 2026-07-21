@@ -1,0 +1,15 @@
+{
+  "source": "examples/02_visium_hd_8um/output/tissue_adrenal_female_hd_8um.png",
+  "display_image": "examples/05_adrenal_platform_benchmark/prepared/spatialatlas/tissue_adrenal_female_hd_8um_display.webp",
+  "dimensions": [
+    5684,
+    6000
+  ],
+  "source_bytes": 31391889,
+  "display_bytes": 5275310,
+  "size_reduction_percent": 83.19530882642965,
+  "webp_quality": 90,
+  "psnr_db": 37.71243112983291,
+  "source_sha256": "93044e45b51d5ff48aff4395fa97a5f1cbbefc580be314858abe165e9a7390e6",
+  "display_sha256": "ec39c31134aa6171a76fb5a98695edd835ae67b1b5b203b73d3cf261d4e18be9"
+}

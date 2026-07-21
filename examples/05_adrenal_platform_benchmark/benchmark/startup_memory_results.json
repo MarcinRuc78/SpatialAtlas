@@ -1,0 +1,251 @@
+{
+  "protocol": {
+    "host": "Apple M4 Pro",
+    "platform": "linux/amd64 Docker for all four scenarios",
+    "spatialatlas_image": "spatialatlas-benchmark:amd64",
+    "shiny_image": "satijalab/seurat@sha256:048d965487afc2961c450879692281a73e24f6de47360ed2f11b31112ebd844e",
+    "readiness": "wall time from docker run invocation to HTTP 200 at root",
+    "memory": "container cgroup memory.current sampled 2 s after readiness",
+    "runs_per_scenario": 6,
+    "warm_summary": "first observation excluded; median and range of the next five",
+    "spatialatlas_workers": 1
+  },
+  "datasets": {
+    "seurat_shiny_visium": {
+      "profiles": 992,
+      "genes": 19465,
+      "kind": "shiny"
+    },
+    "spatialatlas_visium": {
+      "profiles": 992,
+      "genes": 19465,
+      "kind": "spatialatlas_classic"
+    },
+    "seurat_shiny_visium_hd": {
+      "profiles": 143112,
+      "genes": 15109,
+      "kind": "shiny_hd"
+    },
+    "spatialatlas_visium_hd": {
+      "profiles": 143112,
+      "genes": 15109,
+      "kind": "spatialatlas_hd"
+    }
+  },
+  "runs": [
+    {
+      "scenario": "seurat_shiny_visium",
+      "repetition": 0,
+      "startup_to_http_200_s": 4.849021707981592,
+      "steady_memory_bytes": 802009088,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nLoading required package: SeuratObject\nLoading required package: sp\n\nAttaching package: \u2018SeuratObject\u2019\n\nThe following objects are masked from \u2018package:base\u2019:\n\n    intersect, t\n\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium",
+      "repetition": 0,
+      "startup_to_http_200_s": 1.6551910829730332,
+      "steady_memory_bytes": 255782912,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.04 GiB\n  Total spots: 992, default point size: 4.0px\nAtlas ready: 992 cells, 19465 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:42:16 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:42:16 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:42:16 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:42:16 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium_hd",
+      "repetition": 0,
+      "startup_to_http_200_s": 5.98530075000599,
+      "steady_memory_bytes": 1025654784,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app_hd', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium_hd",
+      "repetition": 0,
+      "startup_to_http_200_s": 2.009056500013685,
+      "steady_memory_bytes": 887951360,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.29 GiB\n  Total spots: 143112, default point size: 0.5px\nAtlas ready: 143112 cells, 15109 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:42:29 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:42:29 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:42:29 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:42:29 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium",
+      "repetition": 1,
+      "startup_to_http_200_s": 4.658092541998485,
+      "steady_memory_bytes": 771227648,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nLoading required package: SeuratObject\nLoading required package: sp\n\nAttaching package: \u2018SeuratObject\u2019\n\nThe following objects are masked from \u2018package:base\u2019:\n\n    intersect, t\n\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium_hd",
+      "repetition": 1,
+      "startup_to_http_200_s": 2.0941898330056574,
+      "steady_memory_bytes": 890707968,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.29 GiB\n  Total spots: 143112, default point size: 0.5px\nAtlas ready: 143112 cells, 15109 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:42:40 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:42:40 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:42:40 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:42:40 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium_hd",
+      "repetition": 1,
+      "startup_to_http_200_s": 6.24506637500599,
+      "steady_memory_bytes": 1025105920,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app_hd', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium",
+      "repetition": 1,
+      "startup_to_http_200_s": 1.9722144590050448,
+      "steady_memory_bytes": 254742528,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.04 GiB\n  Total spots: 992, default point size: 4.0px\nAtlas ready: 992 cells, 19465 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:42:53 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:42:53 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:42:53 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:42:53 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium_hd",
+      "repetition": 2,
+      "startup_to_http_200_s": 6.236686624994036,
+      "steady_memory_bytes": 1022337024,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app_hd', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium_hd",
+      "repetition": 2,
+      "startup_to_http_200_s": 2.1281789160275366,
+      "steady_memory_bytes": 890155008,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.29 GiB\n  Total spots: 143112, default point size: 0.5px\nAtlas ready: 143112 cells, 15109 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:43:06 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:43:06 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:43:06 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:43:06 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium",
+      "repetition": 2,
+      "startup_to_http_200_s": 4.470576624997193,
+      "steady_memory_bytes": 770883584,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nLoading required package: SeuratObject\nLoading required package: sp\n\nAttaching package: \u2018SeuratObject\u2019\n\nThe following objects are masked from \u2018package:base\u2019:\n\n    intersect, t\n\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium",
+      "repetition": 2,
+      "startup_to_http_200_s": 1.7670023329847027,
+      "steady_memory_bytes": 254984192,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.04 GiB\n  Total spots: 992, default point size: 4.0px\nAtlas ready: 992 cells, 19465 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:43:17 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:43:17 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:43:17 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:43:17 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium_hd",
+      "repetition": 3,
+      "startup_to_http_200_s": 6.206464582995977,
+      "steady_memory_bytes": 1025110016,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app_hd', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium",
+      "repetition": 3,
+      "startup_to_http_200_s": 1.783950167009607,
+      "steady_memory_bytes": 257146880,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.04 GiB\n  Total spots: 992, default point size: 4.0px\nAtlas ready: 992 cells, 19465 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:43:29 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:43:29 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:43:29 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:43:29 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium",
+      "repetition": 3,
+      "startup_to_http_200_s": 4.622639208013425,
+      "steady_memory_bytes": 768782336,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nLoading required package: SeuratObject\nLoading required package: sp\n\nAttaching package: \u2018SeuratObject\u2019\n\nThe following objects are masked from \u2018package:base\u2019:\n\n    intersect, t\n\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium_hd",
+      "repetition": 3,
+      "startup_to_http_200_s": 2.076548915996682,
+      "steady_memory_bytes": 891342848,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.29 GiB\n  Total spots: 143112, default point size: 0.5px\nAtlas ready: 143112 cells, 15109 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:43:41 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:43:41 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:43:41 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:43:41 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium",
+      "repetition": 4,
+      "startup_to_http_200_s": 5.042456499999389,
+      "steady_memory_bytes": 771588096,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nLoading required package: SeuratObject\nLoading required package: sp\n\nAttaching package: \u2018SeuratObject\u2019\n\nThe following objects are masked from \u2018package:base\u2019:\n\n    intersect, t\n\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium",
+      "repetition": 4,
+      "startup_to_http_200_s": 1.9227791659941431,
+      "steady_memory_bytes": 253198336,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.04 GiB\n  Total spots: 992, default point size: 4.0px\nAtlas ready: 992 cells, 19465 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:43:52 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:43:52 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:43:52 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:43:52 +0000] [35] [INFO] Booting worker with pid: 35\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium_hd",
+      "repetition": 4,
+      "startup_to_http_200_s": 6.177120208012639,
+      "steady_memory_bytes": 1025040384,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app_hd', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium_hd",
+      "repetition": 4,
+      "startup_to_http_200_s": 2.180104666011175,
+      "steady_memory_bytes": 888213504,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.29 GiB\n  Total spots: 143112, default point size: 0.5px\nAtlas ready: 143112 cells, 15109 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:44:05 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:44:05 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:44:05 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:44:05 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium",
+      "repetition": 5,
+      "startup_to_http_200_s": 4.847476708004251,
+      "steady_memory_bytes": 772325376,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nLoading required package: SeuratObject\nLoading required package: sp\n\nAttaching package: \u2018SeuratObject\u2019\n\nThe following objects are masked from \u2018package:base\u2019:\n\n    intersect, t\n\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium_hd",
+      "repetition": 5,
+      "startup_to_http_200_s": 2.0657440830254927,
+      "steady_memory_bytes": 888561664,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.29 GiB\n  Total spots: 143112, default point size: 0.5px\nAtlas ready: 143112 cells, 15109 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:44:17 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:44:17 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:44:17 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:44:17 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    },
+    {
+      "scenario": "seurat_shiny_visium_hd",
+      "repetition": 5,
+      "startup_to_http_200_s": 6.075688416021876,
+      "steady_memory_bytes": 1021681664,
+      "log_tail": "> shiny::runApp('/work/benchmark/reference_app_hd', host='0.0.0.0', port=8050, launch.browser=FALSE)\nLoading required package: shiny\nWarning: The select input \"feature\" contains a large number of options; consider using server-side selectize for massively improved performance. See the Details section of the ?selectizeInput help topic.\n\nListening on http://0.0.0.0:8050\n"
+    },
+    {
+      "scenario": "spatialatlas_visium",
+      "repetition": 5,
+      "startup_to_http_200_s": 1.706963167001959,
+      "steady_memory_bytes": 257368064,
+      "log_tail": "Loading samples...\n  Expression cache memory: 0.04 GiB\n  Total spots: 992, default point size: 4.0px\nAtlas ready: 992 cells, 19465 genes, 1 samples\n  Multi-gene defaults: ['Cyp11b2', 'Cyp11b1', 'Npy', 'Th']\n[2026-07-21 09:44:29 +0000] [1] [INFO] Starting gunicorn 22.0.0\n[2026-07-21 09:44:29 +0000] [1] [INFO] Listening at: http://0.0.0.0:8050 (1)\n[2026-07-21 09:44:29 +0000] [1] [INFO] Using worker: gthread\n[2026-07-21 09:44:29 +0000] [34] [INFO] Booting worker with pid: 34\n"
+    }
+  ],
+  "summary": {
+    "seurat_shiny_visium": {
+      "n_total": 6,
+      "n_warm": 5,
+      "first_start_s": 4.849021707981592,
+      "warm_start_median_s": 4.658092541998485,
+      "warm_start_min_s": 4.470576624997193,
+      "warm_start_max_s": 5.042456499999389,
+      "warm_memory_median_bytes": 771227648,
+      "warm_memory_min_bytes": 768782336,
+      "warm_memory_max_bytes": 772325376
+    },
+    "spatialatlas_visium": {
+      "n_total": 6,
+      "n_warm": 5,
+      "first_start_s": 1.6551910829730332,
+      "warm_start_median_s": 1.783950167009607,
+      "warm_start_min_s": 1.706963167001959,
+      "warm_start_max_s": 1.9722144590050448,
+      "warm_memory_median_bytes": 254984192,
+      "warm_memory_min_bytes": 253198336,
+      "warm_memory_max_bytes": 257368064
+    },
+    "seurat_shiny_visium_hd": {
+      "n_total": 6,
+      "n_warm": 5,
+      "first_start_s": 5.98530075000599,
+      "warm_start_median_s": 6.206464582995977,
+      "warm_start_min_s": 6.075688416021876,
+      "warm_start_max_s": 6.24506637500599,
+      "warm_memory_median_bytes": 1025040384,
+      "warm_memory_min_bytes": 1021681664,
+      "warm_memory_max_bytes": 1025110016
+    },
+    "spatialatlas_visium_hd": {
+      "n_total": 6,
+      "n_warm": 5,
+      "first_start_s": 2.009056500013685,
+      "warm_start_median_s": 2.0941898330056574,
+      "warm_start_min_s": 2.0657440830254927,
+      "warm_start_max_s": 2.180104666011175,
+      "warm_memory_median_bytes": 890155008,
+      "warm_memory_min_bytes": 888213504,
+      "warm_memory_max_bytes": 891342848
+    }
+  }
+}

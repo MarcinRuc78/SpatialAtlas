@@ -1,0 +1,13 @@
+status: PASS
+test_date: 2026-07-20
+input_samples: 2
+input_profiles_per_sample: 1000
+common_genes: 2000
+method: Harmony in PCA space; joint neighbors, Leiden and UMAP
+requested_clusters: 6
+observed_clusters: 6
+elapsed_seconds: 11.73
+peak_rss_gb: 0.984
+output_mode: non-destructive copies
+source_checksums_unchanged: PASS
+markers_csv: PASS

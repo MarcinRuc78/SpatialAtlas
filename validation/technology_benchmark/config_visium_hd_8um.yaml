@@ -1,0 +1,27 @@
+atlas:
+  title: "Visium HD 8 µm benchmark"
+samples:
+  - name: "Adrenal female HD 8 µm"
+    h5ad: "/dataset/output/sample_adrenal_female_hd_8um.h5ad"
+    image: "/dataset/output/tissue_adrenal_female_hd_8um.png"
+    scale_factor_x: 0.205592
+    scale_factor_y: 0.205592
+    img_xmin: 0
+    img_xmax: 5684
+    img_ymin: 0
+    img_ymax: 6000
+display:
+  default_point_size: 0.5
+  default_opacity: 0.6
+  default_colorscale: "Transparent-Green"
+  spatial_plot_height: 850
+  max_gene_dropdown: 500
+multi_gene:
+  gene_a: "Cyp11b2"
+  gene_b: "Gpc3"
+  gene_c: "Npy"
+  gene_d: "Akr1c18"
+server:
+  host: "0.0.0.0"
+  port: 8050
+  debug: false

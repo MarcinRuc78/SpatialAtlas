@@ -1,0 +1,37 @@
+atlas:
+  title: "Two-section adrenal benchmark"
+samples:
+  - name: "Female"
+    h5ad: "/dataset/input/female/sample_female.h5ad"
+    image: "/dataset/input/female/tissue_female.png"
+    scale_factor_x: 0.2056
+    scale_factor_y: 0.2056
+    img_xmin: 0
+    img_xmax: 5684
+    img_ymin: 0
+    img_ymax: 6000
+  - name: "Male"
+    h5ad: "/dataset/input/male/sample_male.h5ad"
+    image: "/dataset/input/male/tissue_male.png"
+    scale_factor_x: 0.202
+    scale_factor_y: 0.202
+    img_xmin: 0
+    img_xmax: 6000
+    img_ymin: 0
+    img_ymax: 5069
+markers_csv: "/dataset/input/markers.csv"
+display:
+  default_point_size: 0.5
+  default_opacity: 0.6
+  default_colorscale: "Transparent-Green"
+  spatial_plot_height: 850
+  max_gene_dropdown: 500
+multi_gene:
+  gene_a: "Cyp11b2"
+  gene_b: "Gpc3"
+  gene_c: "Npy"
+  gene_d: "Akr1c18"
+server:
+  host: "0.0.0.0"
+  port: 8050
+  debug: false

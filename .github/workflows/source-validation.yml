@@ -1,0 +1,27 @@
+name: source-validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile Python sources
+        run: |
+          python -m compileall -q software validation examples/05_adrenal_platform_benchmark
+      - name: Validate compact JSON reports
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          for path in Path('.').rglob('*.json'):
+              json.loads(path.read_text(encoding='utf-8'))
+          PY
+      - name: Verify repository files
+        run: shasum -a 256 -c checksums.sha256

@@ -1,0 +1,13 @@
+status: PASS
+test_date: 2026-07-20
+tag: spatialatlas-final:2026-07-20
+image_id: sha256:86aa30cdb240e935b8cc4deb24190d8ed9bc3833d926ea8b365fff3b58293b77
+image_size_bytes: 199482944
+platform: linux/arm64
+gunicorn_workers: 2
+root_http_status: 200
+tissue_image_http_status: 200
+data_mount: read-only
+config_mount: read-only
+compose_config: PASS
+public_tls: NOT TESTED (requires operator-controlled domain and network ingress)

@@ -1,0 +1,130 @@
+{
+  "protocol": {
+    "image": "spatialatlas-final:2026-07-20",
+    "workers": 1,
+    "repetitions": 5,
+    "readiness": "docker run to HTTP 200",
+    "memory": "cgroup memory.current 2 s after readiness"
+  },
+  "runs": [
+    {
+      "scenario": "public_visium",
+      "repetition": 1,
+      "startup_to_http_200_s": 1.6703066669870168,
+      "steady_memory_bytes": 755163136
+    },
+    {
+      "scenario": "visium_hd_8um",
+      "repetition": 1,
+      "startup_to_http_200_s": 1.5456986250064801,
+      "steady_memory_bytes": 1067974656
+    },
+    {
+      "scenario": "multisample_adrenal",
+      "repetition": 1,
+      "startup_to_http_200_s": 2.7653245000110473,
+      "steady_memory_bytes": 3714899968
+    },
+    {
+      "scenario": "multisample_adrenal",
+      "repetition": 2,
+      "startup_to_http_200_s": 2.2052436659869272,
+      "steady_memory_bytes": 3679428608
+    },
+    {
+      "scenario": "visium_hd_8um",
+      "repetition": 2,
+      "startup_to_http_200_s": 1.2147099169960711,
+      "steady_memory_bytes": 1171603456
+    },
+    {
+      "scenario": "public_visium",
+      "repetition": 2,
+      "startup_to_http_200_s": 1.0266747919959016,
+      "steady_memory_bytes": 654909440
+    },
+    {
+      "scenario": "public_visium",
+      "repetition": 3,
+      "startup_to_http_200_s": 0.9532616250216961,
+      "steady_memory_bytes": 655417344
+    },
+    {
+      "scenario": "visium_hd_8um",
+      "repetition": 3,
+      "startup_to_http_200_s": 1.1265902079758234,
+      "steady_memory_bytes": 1132322816
+    },
+    {
+      "scenario": "multisample_adrenal",
+      "repetition": 3,
+      "startup_to_http_200_s": 1.9580231249856297,
+      "steady_memory_bytes": 3654316032
+    },
+    {
+      "scenario": "multisample_adrenal",
+      "repetition": 4,
+      "startup_to_http_200_s": 1.9992219999840017,
+      "steady_memory_bytes": 3675328512
+    },
+    {
+      "scenario": "visium_hd_8um",
+      "repetition": 4,
+      "startup_to_http_200_s": 1.175529958010884,
+      "steady_memory_bytes": 1132875776
+    },
+    {
+      "scenario": "public_visium",
+      "repetition": 4,
+      "startup_to_http_200_s": 0.9505134999926668,
+      "steady_memory_bytes": 654540800
+    },
+    {
+      "scenario": "public_visium",
+      "repetition": 5,
+      "startup_to_http_200_s": 0.9514032079896424,
+      "steady_memory_bytes": 655228928
+    },
+    {
+      "scenario": "visium_hd_8um",
+      "repetition": 5,
+      "startup_to_http_200_s": 1.0923619999957737,
+      "steady_memory_bytes": 1132326912
+    },
+    {
+      "scenario": "multisample_adrenal",
+      "repetition": 5,
+      "startup_to_http_200_s": 1.8810207089991309,
+      "steady_memory_bytes": 3686838272
+    }
+  ],
+  "summary": {
+    "public_visium": {
+      "n": 5,
+      "startup_median_s": 0.9532616250216961,
+      "startup_min_s": 0.9505134999926668,
+      "startup_max_s": 1.6703066669870168,
+      "steady_memory_median_bytes": 655228928,
+      "steady_memory_min_bytes": 654540800,
+      "steady_memory_max_bytes": 755163136
+    },
+    "visium_hd_8um": {
+      "n": 5,
+      "startup_median_s": 1.175529958010884,
+      "startup_min_s": 1.0923619999957737,
+      "startup_max_s": 1.5456986250064801,
+      "steady_memory_median_bytes": 1132326912,
+      "steady_memory_min_bytes": 1067974656,
+      "steady_memory_max_bytes": 1171603456
+    },
+    "multisample_adrenal": {
+      "n": 5,
+      "startup_median_s": 1.9992219999840017,
+      "startup_min_s": 1.8810207089991309,
+      "startup_max_s": 2.7653245000110473,
+      "steady_memory_median_bytes": 3679428608,
+      "steady_memory_min_bytes": 3654316032,
+      "steady_memory_max_bytes": 3714899968
+    }
+  }
+}

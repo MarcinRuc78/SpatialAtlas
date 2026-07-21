@@ -1,0 +1,49 @@
+{
+  "dataset_id": "authors_adrenal_visium_classic",
+  "organ": "mouse adrenal gland and adjacent adipose tissue",
+  "technology": "10x Genomics Visium CytAssist, classic spot-based resolution",
+  "publication": {
+    "title": "Molecular landscape of the mouse adrenal gland and adjacent adipose tissue by spatial transcriptomics",
+    "doi": "10.5603/fhc.108988",
+    "geo_accession": "GSE283302"
+  },
+  "dimensions": {
+    "profiles": 992,
+    "genes_in_benchmark_object": 19465
+  },
+  "benchmark_environment": {
+    "reference_image": "satijalab/seurat@sha256:048d965487afc2961c450879692281a73e24f6de47360ed2f11b31112ebd844e",
+    "r": "4.5.2",
+    "seurat": "5.5.1",
+    "shiny": "1.14.0",
+    "ggplot2": "4.0.3",
+    "cairo": "1.7.0"
+  },
+  "files": {
+    "source_app/app.R": "7d09e6680841bb13da7e384a238ecf4ef6c16243043f937120499fb1c69a7ba3",
+    "source_data/adrenal_visium_seurat.rds": "cd338178ff885d5d6eb7080b66bdaf22356b5b619324d51422cc88cb6dbbcb94",
+    "prepared/sample_adrenal_visium_classic.h5ad": "d218203ee8348280b66a083060dda35debda992fe5e450fc312cd518f0ad1b2d",
+    "prepared/tissue_adrenal_visium_classic.png": "77dbc4682d5ccf839b878e06eb44f51d1636a8e422e4ef7fe41a7435fb2d28a1"
+  },
+  "visium_hd_companion": {
+    "path": "examples/02_visium_hd_8um/output/sample_adrenal_female_hd_8um.h5ad",
+    "publication": {
+      "title": "Single-cell spatial transcriptomics reveals sex-dependent gene expression and intercellular signalling in mouse adrenal cortex",
+      "doi": "10.1038/s42003-026-10697-9"
+    },
+    "profiles": 143112,
+    "genes": 15109,
+    "bin_size_um": 8,
+    "sha256": "65cf713a5aa58f0f1b303a5b065475f9292e01688c28879016600a500f586686",
+    "matched_shiny_reference": {
+      "object_path": "source_data/adrenal_visium_hd_shiny.rds",
+      "object_sha256": "f295548ab067e1eadbfd3ccf0ea78ad434c7da87d95a930068bbf592e507440b",
+      "builder_path": "scripts/build_adrenal_hd_shiny_object.R",
+      "builder_sha256": "24ee745d6e15794b1cf4b3bda9583dc1c83d15a39f364aeb9d891f7e4660ba94",
+      "app_path": "benchmark/reference_app_hd/app.R",
+      "app_sha256": "e2217834e0ade8dbb03e2cdc31225d77e1eb22b800a4bdfe497bce4fa603bc68",
+      "relationship": "Expression CSR arrays, identifiers and coordinates are copied without normalization or filtering; histology is shared with the H5AD application."
+    }
+  },
+  "rights_note": "Biological data reuse follows the originating studies, GEO record and institutional approvals; the software license does not supersede those terms."
+}

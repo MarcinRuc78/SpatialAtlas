@@ -1,0 +1,37 @@
+{
+  "validated": true,
+  "profiles": 143112,
+  "genes": 15109,
+  "nonzero_matrix_entries": 39058199,
+  "checks": {
+    "dimensions_identical": true,
+    "sparse_values_identical": true,
+    "sparse_indices_identical": true,
+    "sparse_pointers_identical": true,
+    "genes_identical": true,
+    "barcodes_identical": true,
+    "coordinates_identical": true
+  },
+  "markers": [
+    {
+      "gene": "Npy",
+      "nonzero_profiles": 8539,
+      "maximum": 6.05994176864624
+    },
+    {
+      "gene": "Cyp11b1",
+      "nonzero_profiles": 83935,
+      "maximum": 6.931721687316895
+    },
+    {
+      "gene": "Cyp11b2",
+      "nonzero_profiles": 14801,
+      "maximum": 5.913104057312012
+    },
+    {
+      "gene": "Th",
+      "nonzero_profiles": 10587,
+      "maximum": 6.426947593688965
+    }
+  ]
+}

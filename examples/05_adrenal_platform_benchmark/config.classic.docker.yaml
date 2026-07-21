@@ -1,0 +1,42 @@
+atlas:
+  title: "Classic Visium adrenal gland"
+  subtitle: "Matched SpatialAtlas representation of the first adrenal-atlas Shiny application"
+
+samples:
+  - name: "Adrenal classic Visium"
+    h5ad: "/data/sample_adrenal_visium_classic.h5ad"
+    image: "/data/tissue_adrenal_visium_classic.png"
+    scale_factor_x: 1.0
+    scale_factor_y: 1.0
+    offset_x: 0
+    offset_y: 0
+    img_xmin: 0
+    img_xmax: 600
+    img_ymin: 0
+    img_ymax: 546
+
+display:
+  default_point_size: 4.0
+  default_opacity: 0.75
+  default_colorscale: "Transparent-Green"
+  spatial_plot_height: 760
+  max_gene_dropdown: 500
+  layout: "auto"
+
+multi_gene:
+  gene_a: "Cyp11b2"
+  gene_b: "Cyp11b1"
+  gene_c: "Npy"
+  gene_d: "Th"
+
+citation:
+  text: "Classic Visium mouse adrenal section from the authors' first adrenal-atlas application."
+  authors: "Blatkiewicz et al."
+  paper_title: "Molecular landscape of the mouse adrenal gland and adjacent adipose tissue by spatial transcriptomics"
+  doi: "10.5603/fhc.108988"
+  url: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE283302"
+
+server:
+  host: "0.0.0.0"
+  port: 8050
+  debug: false
