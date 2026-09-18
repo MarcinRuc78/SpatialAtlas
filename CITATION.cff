@@ -1,17 +1,17 @@
 cff-version: 1.2.0
-message: "If you use SpatialAtlas v1.0.0, please cite this software release."
+message: "If you use SpatialAtlas, please cite this software release."
 title: "SpatialAtlas: interactive visualization and sharing of self-hosted Visium and Visium HD spatial transcriptomics atlases"
 type: software
-version: 1.0.0
-date-released: 2026-07-21
+version: 1.1.0
+date-released: 2026-09-18
 license: MIT
-doi: "10.5281/zenodo.21476516"
+doi: "10.5281/zenodo.21476515"
 repository-code: "https://github.com/MarcinRuc78/SpatialAtlas"
 url: "https://adrenaldash.duckdns.org"
 authors:
   - family-names: Blatkiewicz
     given-names: Małgorzata
-  - family-names: Seraszek-Janos
+  - family-names: Seraszek-Jaros
     given-names: Agnieszka
   - family-names: Gorna
     given-names: Agnieszka

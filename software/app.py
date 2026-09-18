@@ -193,7 +193,8 @@ _default_pt_size = round(_default_pt_size * 2) / 2  # round to 0.5 step
 print(f"  Total spots: {_total_spots}, default point size: {_default_pt_size}px")
 
 # Build lightweight combined metadata without materializing a union expression
-# matrix. Missing genes in a sample are represented as zero only on request.
+# matrix. A gene that is absent from a sample is reported as unavailable for
+# that sample; it is never substituted by a measured expression value of zero.
 all_genes = sorted(set().union(*[set(s["gene_index"]) for s in samples]))
 n_obs_combined = sum(s["n_obs"] for s in samples)
 clusters_combined = np.concatenate([s["clusters"] for s in samples])
@@ -211,13 +212,64 @@ markers_df = None
 if markers_csv_path and os.path.exists(markers_csv_path):
     markers_df = pd.read_csv(markers_csv_path)
 
+# =============================================================================
+# Gene availability across samples
+# =============================================================================
+# Samples processed independently can retain different gene sets: a gene may be
+# undetected in a section, or removed by the minimum-observation filter applied
+# during preparation. Neither situation is a measurement of zero expression, so
+# availability is tracked explicitly and propagated to every view.
+gene_presence = {
+    gene: tuple(gene in s["gene_index"] for s in samples)
+    for gene in all_genes
+}
+partial_genes = {g for g, present in gene_presence.items() if not all(present)}
+
+
+def gene_present_in(gene, sample_idx):
+    """True when the sample matrix actually contains the gene."""
+    presence = gene_presence.get(gene)
+    return bool(presence) and presence[sample_idx]
+
+
+def missing_samples_for(gene):
+    """Names of samples whose matrix does not contain the gene."""
+    presence = gene_presence.get(gene)
+    if not presence:
+        return []
+    return [s["name"] for s, ok in zip(samples, presence) if not ok]
+
+
+def natural_list(names):
+    """Join names the way a sentence would: "A", "A and B", "A, B and C"."""
+    if len(names) <= 1:
+        return "".join(names)
+    return f"{', '.join(names[:-1])} and {names[-1]}"
+
+
+def gene_option_label(gene):
+    """Dropdown label; partial genes carry an explicit availability count."""
+    if gene not in partial_genes:
+        return gene
+    n_present = sum(gene_presence[gene])
+    return f"{gene}  —  in {n_present} of {n_samples} samples"
+
+
+# Wording shown to readers. The panels say only what is true of that panel;
+# the full explanation is given once, in the notice under the gene selector.
+UNAVAILABLE_NOTE = "no data for this gene in this sample"
+
 # Gene dropdown options
 gene_names = list(all_genes)
 gene_set = set(gene_names)
-gene_options = [{"label": g, "value": g} for g in gene_names]
+gene_options = [{"label": gene_option_label(g), "value": g} for g in gene_names]
 max_dropdown = display_cfg.get("max_gene_dropdown", 500)
 
 print(f"Atlas ready: {n_obs_combined} cells, {len(all_genes)} genes, {n_samples} samples", flush=True)
+if partial_genes:
+    print(f"  {len(partial_genes)} of {len(all_genes)} genes are absent from at "
+          f"least one sample matrix and are reported as unavailable, not zero",
+          flush=True)
 
 # =============================================================================
 # Subplot layout (supports 1-4 samples)
@@ -340,7 +392,10 @@ gene_selector = html.Div([
             placeholder="Type gene name...", style={"width": "300px"},
             optionHeight=30, searchable=True
         )
-    ], style={"display": "flex", "justifyContent": "center", "alignItems": "center"})
+    ], style={"display": "flex", "justifyContent": "center", "alignItems": "center"}),
+    html.Div(id="gene-availability-note", style={
+        "marginTop": "8px", "textAlign": "center", "fontSize": "13px",
+    }),
 ], id="gene-selector-div", style={"marginBottom": "20px", "textAlign": "center"})
 
 # --- Spatial tab ---
@@ -490,20 +545,72 @@ app.layout = html.Div([header, gene_selector,
 # =============================================================================
 # Helper: get expression vector for a gene
 # =============================================================================
-def get_expr(gene):
+def get_expr(gene, missing=np.nan):
+    """Combined expression vector for one gene.
+
+    Observations belonging to a sample whose matrix does not contain the gene
+    are filled with ``missing`` (NaN by default) rather than zero, so that
+    "not retained in this sample" stays distinguishable from a measured zero
+    in every downstream plot and summary.
+    """
     if not gene or gene not in gene_set:
-        return np.zeros(n_obs_combined, dtype=np.float32)
+        return np.full(n_obs_combined, missing, dtype=np.float32)
     chunks = []
     for sample in samples:
         idx = sample["gene_index"].get(gene)
         if idx is None:
-            chunks.append(np.zeros(sample["n_obs"], dtype=np.float32))
+            chunks.append(np.full(sample["n_obs"], missing, dtype=np.float32))
             continue
         column = sample["X"][:, idx]
         if sp.issparse(column):
             column = column.toarray()
         chunks.append(np.asarray(column, dtype=np.float32).reshape(-1))
     return np.concatenate(chunks)
+
+
+def expression_vmax(expr):
+    """99th percentile of measured positive values, ignoring unavailable data."""
+    measured = expr[np.isfinite(expr)]
+    positive = measured[measured > 0]
+    if positive.size == 0:
+        return 1.0
+    return max(float(np.percentile(positive, 99)), 0.1)
+
+
+def add_extent_placeholder(fig, sample, row, col):
+    """Keep the histology visible in a subplot that carries no data trace.
+
+    Layout images are positioned in data coordinates, so a subplot without any
+    trace would autoscale to an unrelated range and hide the tissue image.
+    """
+    bounds = sample["img_bounds"]
+    fig.add_trace(go.Scattergl(
+        x=[bounds["xmin"], bounds["xmax"]],
+        y=[bounds["ymin"], bounds["ymax"]],
+        mode="markers", marker=dict(size=0.1, opacity=0),
+        hoverinfo="skip", showlegend=False,
+    ), row=row, col=col)
+
+
+def unavailable_annotation(fig, gene, row, col):
+    """Mark a subplot whose sample has no data for the requested gene."""
+    fig.add_annotation(
+        text=f"<b>{gene}</b><br>{UNAVAILABLE_NOTE}",
+        xref="x domain", yref="y domain",
+        x=0.5, y=0.5, showarrow=False, align="center",
+        font=dict(size=11, color="#5a3d00"),
+        bgcolor="rgba(255,244,214,0.92)", bordercolor="#b8860b", borderwidth=1,
+        borderpad=5, row=row, col=col,
+    )
+
+
+def subplot_title(sample, sample_idx, gene):
+    """Subplot title, flagged when the sample does not carry the gene."""
+    if gene and gene in partial_genes and not gene_present_in(gene, sample_idx):
+        return (f"<b>{sample['name']}</b>"
+                f"<br><span style='font-size:11px;color:#8a6d00'>"
+                f"no data for {gene}</span>")
+    return f"<b>{sample['name']}</b>"
 
 
 def sample_slice(sample_idx):
@@ -529,7 +636,8 @@ def gene_search_results(search, current_value):
     else:
         results = list(gene_options[:max_dropdown])
     if current_value and not any(o["value"] == current_value for o in results):
-        results = [{"label": current_value, "value": current_value}] + results
+        results = [{"label": gene_option_label(current_value),
+                    "value": current_value}] + results
     return results
 
 
@@ -587,6 +695,25 @@ def toggle_gene_selector(active_tab):
     return {"display": "none"}
 
 
+# --- Gene availability banner ---
+@app.callback(
+    Output("gene-availability-note", "children"),
+    Input("gene", "value"),
+)
+def gene_availability_note(gene):
+    """Name the samples whose data does not contain the selected gene."""
+    if not gene or gene not in partial_genes:
+        return None
+    absent = missing_samples_for(gene)
+    return html.Div([
+        html.B(f"{gene} is missing from {natural_list(absent)}"),
+    ], style={
+        "display": "inline-block", "maxWidth": "780px", "padding": "8px 12px",
+        "backgroundColor": "#fff4d6", "border": "1px solid #b8860b",
+        "borderRadius": "4px", "textAlign": "left", "color": "#5a3d00",
+    })
+
+
 # --- UMAP plot ---
 if has_umap:
     @app.callback(
@@ -599,9 +726,12 @@ if has_umap:
             return no_update
         expr = get_expr(gene)
         gene_label = gene or "expression"
+        # Observations from samples without the gene are not colored on the
+        # expression scale; they are drawn separately and labelled unavailable.
+        measured = np.isfinite(expr)
         df = pd.DataFrame({
-            "UMAP1": umap_coords[:, 0], "UMAP2": umap_coords[:, 1],
-            "cluster": clusters_combined, gene_label: expr
+            "UMAP1": umap_coords[measured, 0], "UMAP2": umap_coords[measured, 1],
+            "cluster": clusters_combined[measured], gene_label: expr[measured]
         })
         fig = px.scatter(df, x="UMAP1", y="UMAP2", color=gene_label,
                          hover_data=["cluster"], opacity=0.8,
@@ -609,7 +739,23 @@ if has_umap:
         fig.update_traces(marker=dict(size=3))
         fig.update_coloraxes(colorbar_title="Expression<br>[arb. units]")
         fig.update_layout(template="plotly_white")
-        cents = df.groupby("cluster", observed=False)[["UMAP1", "UMAP2"]].median().reset_index()
+        if not measured.all():
+            absent = ", ".join(missing_samples_for(gene))
+            fig.add_trace(go.Scattergl(
+                x=umap_coords[~measured, 0], y=umap_coords[~measured, 1],
+                mode="markers", marker=dict(size=3, color="#c8c8c8", opacity=0.6),
+                name=f"no data for {gene} ({absent})",
+                hovertemplate=f"{gene}: {UNAVAILABLE_NOTE}<extra></extra>",
+            ))
+            fig.data = fig.data[-1:] + fig.data[:-1]
+            fig.update_layout(showlegend=True, legend=dict(
+                orientation="h", yanchor="bottom", y=1.02, x=0))
+        # Centroids use every observation so that cluster labels stay in the
+        # same place regardless of which samples carry the selected gene.
+        cents = pd.DataFrame({
+            "UMAP1": umap_coords[:, 0], "UMAP2": umap_coords[:, 1],
+            "cluster": clusters_combined,
+        }).groupby("cluster", observed=False)[["UMAP1", "UMAP2"]].median().reset_index()
         for _, row in cents.iterrows():
             fig.add_annotation(
                 x=row["UMAP1"], y=row["UMAP2"], text=row["cluster"],
@@ -635,7 +781,7 @@ def update_spatial(gene, size, opacity, color_scale_name, active_tab="tab-spatia
     vspacing = 0.05 if N_ROWS > 1 else 0.02
     fig = make_subplots(
         rows=N_ROWS, cols=N_COLS,
-        subplot_titles=[f"<b>{s['name']}</b>" for s in samples],
+        subplot_titles=[subplot_title(s, si, gene) for si, s in enumerate(samples)],
         horizontal_spacing=hspacing,
         vertical_spacing=vspacing,
     )
@@ -665,20 +811,25 @@ def update_spatial(gene, size, opacity, color_scale_name, active_tab="tab-spatia
         # Expression mode
         cscale = COLOR_SCALES[color_scale_name]
         expr = get_expr(gene)
-        # Use 99th percentile as vmax to prevent outliers from washing out signal
-        all_expr_pos = expr[expr > 0]
-        if len(all_expr_pos) > 0:
-            vmax = float(np.percentile(all_expr_pos, 99))
-            vmax = max(vmax, 0.1)  # safety floor
-        else:
-            vmax = 1
+        # Use 99th percentile as vmax to prevent outliers from washing out
+        # signal. Unavailable samples contribute NaN and are excluded.
+        vmax = expression_vmax(expr)
+        available = [si for si in range(n_samples) if gene_present_in(gene, si)]
+        scale_owner = available[-1] if available else None
 
         for si, s in enumerate(samples):
             row, col = subplot_index(si)
+            if not gene_present_in(gene, si):
+                # The matrix does not contain this gene. No expression is
+                # drawn and the panel is labelled, so an unmeasured gene is
+                # never shown as an all-zero expression profile.
+                add_extent_placeholder(fig, s, row, col)
+                unavailable_annotation(fig, gene, row, col)
+                continue
             start, end = sample_slice(si)
             e = expr[start:end]
-            mask = e > 0
-            is_last = (si == n_samples - 1)
+            mask = np.isfinite(e) & (e > 0)
+            is_last = (si == scale_owner)
             fig.add_trace(go.Scattergl(
                 x=s["coords"][mask, 0], y=s["coords"][mask, 1], mode="markers",
                 marker=dict(size=size, color=e[mask], colorscale=cscale,
@@ -740,11 +891,16 @@ def update_violin(gene, active_tab="tab-violin"):
     fig = go.Figure()
     sides = ["negative", "positive"] if len(unique_samples) == 2 else [None] * len(unique_samples)
     for si, sname in enumerate(unique_samples):
+        # A sample whose matrix lacks the gene contributes no distribution.
+        # Omitting it keeps an unmeasured gene out of the quantitative summary
+        # instead of adding a spurious distribution concentrated at zero.
+        if not gene_present_in(gene, si):
+            continue
         mask_s = sample_names == sname
         for ci, cl in enumerate(cluster_order):
             mask = mask_s & (clusters == cl)
             vals = expr[mask]
-            vals = vals[~np.isnan(vals)]
+            vals = vals[np.isfinite(vals)]
             fig.add_trace(go.Violin(
                 x=[cl] * len(vals), y=vals,
                 name=sname, legendgroup=sname,
@@ -754,10 +910,21 @@ def update_violin(gene, active_tab="tab-violin"):
                 opacity=0.7, meanline_visible=True, points=False, box_visible=True,
             ))
 
+    absent = missing_samples_for(gene)
+    if absent:
+        fig.add_annotation(
+            text=f"<b>{gene}</b> is missing from {natural_list(absent)}",
+            xref="paper", yref="paper", x=0.5, y=1.10, showarrow=False,
+            font=dict(size=11, color="#5a3d00"),
+            bgcolor="rgba(255,244,214,0.92)", bordercolor="#b8860b",
+            borderwidth=1, borderpad=4,
+        )
+
     fig.update_layout(
         violingap=0, violinmode="overlay",
         template="plotly_white", legend_title="Sample",
         yaxis_title="Expression [arb. units]", height=500,
+        margin=dict(t=90 if absent else 40),
     )
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(showgrid=False)
@@ -783,20 +950,32 @@ if markers_df is not None:
             return go.Figure().update_layout(
                 template="plotly_white",
                 title="Not enough marker genes overlap the expression matrix")
+        # Unavailable samples enter as NaN, so each cluster mean is taken over
+        # the samples that actually measured the gene rather than being diluted
+        # by zeros substituted for absent genes.
         df = pd.DataFrame({gene: get_expr(gene) for gene in genes})
         df["cluster"] = clusters_combined
         mat = df.groupby("cluster", observed=False).mean()
+        mat = mat.fillna(mat.mean())
         scaler = StandardScaler()
         mat_scaled = pd.DataFrame(scaler.fit_transform(mat), index=mat.index, columns=mat.columns)
         link_r = linkage(mat_scaled.values, method="ward")
         link_c = linkage(mat_scaled.T.values, method="ward")
         mat_scaled = mat_scaled.iloc[leaves_list(link_r), leaves_list(link_c)]
+        # Genes measured in only part of the atlas are flagged on the axis so
+        # that a partial cluster mean is not read as a complete one.
+        column_labels = [f"{g} *" if g in partial_genes else g
+                         for g in mat_scaled.columns]
         fig = go.Figure(data=go.Heatmap(
-            z=mat_scaled.values, x=mat_scaled.columns, y=mat_scaled.index,
+            z=mat_scaled.values, x=column_labels, y=mat_scaled.index,
             colorscale="Viridis", colorbar=dict(title="Expression<br>[arb. units]")
         ))
-        fig.update_layout(template="plotly_white",
-                          title=f"Top {n_markers} markers heatmap (scaled by gene)")
+        title = f"Top {n_markers} markers heatmap (scaled by gene)"
+        if any(g in partial_genes for g in mat_scaled.columns):
+            title += ("<br><span style='font-size:11px;color:#8a6d00'>"
+                      "* not present in every sample; the average uses only "
+                      "the samples that have it</span>")
+        fig.update_layout(template="plotly_white", title=title)
         fig.update_xaxes(showgrid=False)
         fig.update_yaxes(showgrid=False)
         return fig
@@ -828,6 +1007,7 @@ def update_multi(*args):
         vertical_spacing=vspacing,
     )
 
+    unavailable = {si: [] for si in range(n_samples)}
     for gi in range(4):
         gene = genes[gi]
         if not enables[gi] or "on" not in enables[gi]:
@@ -838,15 +1018,37 @@ def update_multi(*args):
 
         for si, s in enumerate(samples):
             row, col = subplot_index(si)
+            if gene and not gene_present_in(gene, si):
+                # No channel is drawn for a gene the sample does not contain.
+                unavailable[si].append(gene)
+                continue
             start, end = sample_slice(si)
             e = expr[start:end]
-            mask = e > 0
+            mask = np.isfinite(e) & (e > 0)
             fig.add_trace(go.Scattergl(
                 x=s["coords"][mask, 0], y=s["coords"][mask, 1], mode="markers",
                 marker=dict(size=size, color=e[mask], colorscale=cscale,
                             opacity=op, showscale=False),
                 name=gene, hoverinfo="skip"
             ), row=row, col=col)
+
+    drawn = {trace.xaxis for trace in fig.data}
+    for si, absent in unavailable.items():
+        row, col = subplot_index(si)
+        axis = "x" if si == 0 else f"x{si + 1}"
+        if axis not in drawn:
+            # Every requested channel is missing for this sample; keep the
+            # histology framed instead of letting the subplot autoscale.
+            add_extent_placeholder(fig, samples[si], row, col)
+        if not absent:
+            continue
+        fig.add_annotation(
+            text=f"no data here for: {', '.join(absent)}",
+            xref="x domain", yref="y domain", x=0.5, y=0.02,
+            showarrow=False, font=dict(size=10, color="#5a3d00"),
+            bgcolor="rgba(255,244,214,0.92)", bordercolor="#b8860b",
+            borderwidth=1, borderpad=3, row=row, col=col,
+        )
 
     # Add tissue images
     for si, s in enumerate(samples):

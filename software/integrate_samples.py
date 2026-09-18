@@ -126,7 +126,9 @@ def main():
     try:
         import harmonypy as hm
         print("  Batch correction: Harmony...")
-        pca_data = adata.obsm["X_pca"]
+        # A contiguous copy is required: PCA output can carry negative strides,
+        # which the Torch backend of recent harmonypy releases rejects.
+        pca_data = np.ascontiguousarray(adata.obsm["X_pca"], dtype=np.float32)
         meta = adata.obs[["_sample"]].copy()
         ho = hm.run_harmony(pca_data, meta, "_sample", max_iter_harmony=20)
         # Get corrected PCs — shape must be (n_cells, n_pcs)

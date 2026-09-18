@@ -14,7 +14,7 @@ jobs:
           python-version: "3.11"
       - name: Compile Python sources
         run: |
-          python -m compileall -q software validation examples/05_adrenal_platform_benchmark
+          python -m compileall -q software validation tests examples/05_adrenal_platform_benchmark
       - name: Validate compact JSON reports
         run: |
           python - <<'PY'

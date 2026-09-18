@@ -8,3 +8,11 @@ release-assets/
 examples/05_adrenal_platform_benchmark/benchmark/plots/*.png
 examples/05_adrenal_platform_benchmark/benchmark/plots/*.svg
 ~$*
+
+# Test and coverage artifacts
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+pytest-report.xml
+.pytest_cache/

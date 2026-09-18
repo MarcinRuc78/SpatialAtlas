@@ -1,0 +1,73 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  unit-tests:
+    name: pytest (${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # The release pins Python 3.11; the pinned requirement set
+        # is what the reported measurements were produced with.
+        python-version: ["3.11"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # The preparation and integration workflows are covered as well, so
+          # the full pinned requirement set is installed.
+          pip install -r software/requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Run the test suite with coverage
+        run: |
+          pytest --cov --cov-report=term-missing \
+                 --cov-report=xml --cov-report=html \
+                 --cov-fail-under=70 --junitxml=pytest-report.xml
+
+      - name: Upload coverage and test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.python-version }}
+          path: |
+            coverage.xml
+            htmlcov/
+            pytest-report.xml
+          if-no-files-found: warn
+
+      - name: Coverage summary
+        if: always()
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          report = Path("coverage.xml")
+          if not report.is_file():
+              print("No coverage report was produced.")
+              raise SystemExit(0)
+          root = ET.parse(report).getroot()
+          print("## Coverage\n")
+          print("| File | Statements | Covered |")
+          print("| --- | ---: | ---: |")
+          for cls in root.iter("class"):
+              lines = list(cls.iter("line"))
+              hit = sum(1 for line in lines if line.get("hits") != "0")
+              total = len(lines)
+              share = f"{100 * hit / total:.1f}%" if total else "n/a"
+              print(f"| {cls.get('filename')} | {total} | {share} |")
+          overall = float(root.get("line-rate", 0)) * 100
+          print(f"\n**Total line coverage: {overall:.1f}%**")
+          PY

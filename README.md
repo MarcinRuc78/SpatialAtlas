@@ -1,4 +1,4 @@
-# SpatialAtlas v1.0.0
+# SpatialAtlas
 
 SpatialAtlas is a self-hosted Dash/Plotly application for publishing processed Visium and Visium HD data as an interactive web atlas. It accepts sparse AnnData objects, keeps expression matrices on the server, and materializes only the selected gene vector for plotting. Dataset preparation, deployment, validation and benchmark procedures are documented alongside the code.
 
@@ -9,6 +9,8 @@ SpatialAtlas is a self-hosted Dash/Plotly application for publishing processed V
 - spatial cluster and expression maps, UMAP, violin plots, marker heatmaps, and a four-gene overlay;
 - sparse expression access and WebGL point-cloud rendering;
 - local Python, Gunicorn, Docker Compose, and optional Caddy deployment;
+- explicit per-sample gene availability: a gene absent from one sample's matrix is reported as unavailable, never drawn or summarized as a measured zero;
+- an automated test suite on synthetic fixtures, run in continuous integration with coverage reporting;
 - reproducible artifact, viewer, implementation, browser-readiness, and concurrent-session validation.
 
 ## Repository layout
@@ -16,6 +18,7 @@ SpatialAtlas is a self-hosted Dash/Plotly application for publishing processed V
 ```text
 software/     application, preparation and integration scripts, dependencies, and Docker files
 examples/     configurations, protocols, benchmark code, and compact recorded reports
+tests/        automated unit and functional tests on synthetic fixtures
 validation/   artifact, viewer, and performance-validation scripts
 docs/         deployment and data-access guidance
 ```
@@ -107,7 +110,20 @@ shasum -a 256 -c example-data.sha256
 
 `checksums.sha256` covers the compact files stored directly in the repository.
 
-Data provenance and reuse conditions are listed in [DATASETS.md](DATASETS.md). The classic adrenal object is associated with DOI `10.5603/fhc.108988` and GEO `GSE283302`; the Visium HD adrenal data are associated with DOI `10.1038/s42003-026-10697-9`.
+Data provenance and reuse conditions are listed in [DATASETS.md](DATASETS.md). The classic adrenal object is associated with DOI `10.5603/fhc.108988` and GEO `GSE283302`; the Visium HD adrenal data are associated with DOI `10.1038/s42003-026-10697-9` and GEO `GSE312015`.
+
+## Automated tests
+
+```bash
+pip install -r software/requirements.txt -r requirements-dev.txt
+pytest --cov --cov-report=term-missing
+```
+
+The suite in `tests/` builds every fixture synthetically in a temporary
+directory, runs in roughly fifteen seconds, and needs no biological data. It
+runs on each push through `.github/workflows/tests.yml`, which publishes the
+coverage and JUnit reports as build artifacts and fails below 70 % line
+coverage. See [TESTING.md](TESTING.md) for what is covered at each level.
 
 ## Validation and benchmarks
 

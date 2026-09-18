@@ -13,6 +13,7 @@
 
 - Dataset: female mouse adrenal gland, Space Ranger output, 8 µm binned matrix.
 - Associated publication: Blatkiewicz M, Hryhorowicz S, Szyszka M, et al. *Single-cell spatial transcriptomics reveals sex-dependent gene expression and intercellular signalling in mouse adrenal cortex*. doi:10.1038/s42003-026-10697-9.
+- Repository record: GEO `GSE312015`.
 - Included input components: filtered HDF5 matrix, Parquet tissue positions, scale-factor JSON, and high-resolution tissue image.
 - Input profiles matched to spatial coordinates: 250,669.
 - Validated output after default QC: 143,112 profiles and 15,109 genes.
