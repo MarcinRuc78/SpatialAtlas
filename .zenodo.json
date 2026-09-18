@@ -1,7 +1,7 @@
 {
   "title": "SpatialAtlas: interactive visualization and sharing of self-hosted Visium and Visium HD spatial transcriptomics atlases",
   "upload_type": "software",
-  "description": "SpatialAtlas is a self-hosted Dash application for publishing processed Visium and Visium HD datasets as interactive web atlases. Version 1.1.0 includes the application, reproducible preparation and deployment workflows, worked examples, validation reports, operational benchmarks, explicit reporting of genes absent from a sample, and an automated test suite with continuous integration.",
+  "description": "SpatialAtlas is a self-hosted Dash application for publishing processed Visium and Visium HD datasets as interactive web atlases. Version 1.1.1 includes the application, reproducible preparation and deployment workflows, worked examples, validation reports, operational benchmarks, explicit reporting of genes absent from a sample, and an automated test suite with continuous integration.",
   "creators": [
     {"name": "Blatkiewicz, Małgorzata", "affiliation": "Poznan University of Medical Sciences"},
     {"name": "Seraszek-Jaros, Agnieszka", "affiliation": "Poznan University of Medical Sciences"},
@@ -11,7 +11,7 @@
   ],
   "license": "MIT",
   "access_right": "open",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publication_date": "2026-09-18",
   "keywords": [
     "spatial transcriptomics",

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use SpatialAtlas, please cite this software release."
 title: "SpatialAtlas: interactive visualization and sharing of self-hosted Visium and Visium HD spatial transcriptomics atlases"
 type: software
-version: 1.1.0
+version: 1.1.1
 date-released: 2026-09-18
 license: MIT
 doi: "10.5281/zenodo.21476515"

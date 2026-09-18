@@ -2,6 +2,18 @@
 
 All notable changes to SpatialAtlas are documented in this file.
 
+## 1.1.1 — 2026-09-18
+
+Patch release.
+
+### Fixed
+
+- `checksums.sha256` recomputed for the files changed in 1.1.0 and extended to
+  the test suite, `TESTING.md`, `pytest.ini`, `.coveragerc`,
+  `requirements-dev.txt` and `.github/workflows/tests.yml`, so that the
+  `source-validation` workflow and `shasum -a 256 -c checksums.sha256` pass on
+  the released sources.
+
 ## 1.1.0 — 2026-09-10
 
 Maintenance release: explicit reporting of genes absent from a sample, and an automated test suite with continuous integration.
